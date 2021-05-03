@@ -13,7 +13,9 @@ from ner.utils import test_ner, make_path, load_config, save_config
 from ner.utils import get_logger, print_config, create_model, save_model, clean
 import os
 project_dir = os.path.dirname(os.path.abspath(__file__))
-#以下是模型参数
+
+
+# 以下是模型参数
 flags = tf.app.flags
 flags.DEFINE_boolean("clean",       False,      "clean train folder")
 flags.DEFINE_boolean("train",       False,      "Wither train the model")
@@ -49,10 +51,11 @@ flags.DEFINE_string("dev_file",     os.path.join("%s/data" % project_dir, "time.
 flags.DEFINE_string("test_file",    os.path.join("%s/data" % project_dir, "time.test"),   "Path for test data")
 
 FLAGS = tf.app.flags.FLAGS
-assert FLAGS.clip < 5.1, "gradient clip should't be too much"
+assert FLAGS.clip < 5.1, "gradient clip should't be too much"  # 梯度截断不应该跨步过大
 assert 0 <= FLAGS.dropout < 1, "dropout rate between 0 and 1"
-assert FLAGS.lr > 0, "learning rate must larger than zero"
-assert FLAGS.optimizer in ["adam", "sgd", "adagrad"]
+assert FLAGS.lr > 0, "learning rate must larger than zero"  # 学习速率learning rate（lr）必须要大于0
+assert FLAGS.optimizer in ["adam", "sgd", "adagrad"]  # 定义优化器种类，必须包含在三个之中
+
 
 # 配置模型
 def config_model(tag_to_id):
@@ -74,7 +77,7 @@ def config_model(tag_to_id):
 
 
 def evaluate(sess, model, name, data, id_to_tag, logger):
-    #模型评估
+    # 模型评估
     logger.info("evaluate:{}".format(name))
     ner_results = model.evaluate(sess, data, id_to_tag)  # 得到模型预测的结果
     eval_lines = test_ner(ner_results, FLAGS.result_path)  # 评估结果
@@ -105,6 +108,7 @@ def train():
     # 创建id和标签的映射文件
     if not os.path.isfile(FLAGS.map_file):
         # Create a dictionary and a mapping for tags
+        # t保存的是tag出现的次数，O：26391，B-COVID：21... id-tag指的是id对tag的映射，按照t所对应的频率排序映射；tag-id同此
         _t, tag_to_id, id_to_tag = tag_mapping(train_sentences)
         with open(FLAGS.map_file, "wb") as f:
             pickle.dump([tag_to_id, id_to_tag], f)
@@ -112,7 +116,7 @@ def train():
         with open(FLAGS.map_file, "rb") as f:
             tag_to_id, id_to_tag = pickle.load(f)
 
-    # 对数据进行处理，得到可用于模型训练的数据集
+    # 对数据进行处理，得到可用于模型训练的数据集，按照每句话构建三维数组，具体包括[[[句1][]][]]
     train_data = prepare_dataset(
         train_sentences, FLAGS.max_seq_len, tag_to_id, FLAGS.lower
     )
@@ -135,7 +139,7 @@ def train():
         save_config(config, FLAGS.config_file)
     make_path(FLAGS)
 
-    #设置log
+    # 设置log
     log_path = os.path.join("log", FLAGS.log_file)
     logger = get_logger(log_path)
     print_config(config, logger)
@@ -146,26 +150,26 @@ def train():
 
     steps_per_epoch = train_manager.len_data  # batches
     with tf.Session(config=tf_config) as sess:
-        #创建模型
+        # 创建模型
         model = create_model(sess, Model, FLAGS.ckpt_path, config, logger)
 
         logger.info("start training")
         loss = []
         for i in range(FLAGS.train_epoch):
-            #获取batch
+            # 获取批数据，数据是被打乱的（shuffle）
             for batch in train_manager.iter_batch(shuffle=True):
-                step, batch_loss = model.run_step(sess, True, batch)#训练
+                step, batch_loss = model.run_step(sess, True, batch)  # 训练
 
-                loss.append(batch_loss)#收集损失loss
-                if step % FLAGS.steps_check == 0:#这里都是log
+                loss.append(batch_loss)  # 收集损失loss
+                if step % FLAGS.steps_check == 0:  # 这里都是log
                     iteration = step // steps_per_epoch + 1
                     logger.info("iteration:{},step:{}/{},loss:{:>0.4f}".format(
                         iteration, step%steps_per_epoch, steps_per_epoch, np.mean(loss)
                     ))
                     loss = []
-            #评估模型正确率
+            # 评估模型正确率
             best = evaluate(sess, model, "dev", dev_manager, id_to_tag, logger)
-            if best:#保存模型
+            if best:  # 保存模型
                 save_model(sess, model, FLAGS.ckpt_path, logger, global_steps=step)
             evaluate(sess, model, "test", test_manager, id_to_tag, logger)
 
