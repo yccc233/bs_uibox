@@ -1,0 +1,1824 @@
+2021-05-03 22:39:47,127 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - num_tags       :	16
+2021-05-03 22:39:47,128 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - lstm_dim       :	100
+2021-05-03 22:39:47,128 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - batch_size     :	32
+2021-05-03 22:39:47,128 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - train_epoch    :	50
+2021-05-03 22:39:47,128 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - max_seq_len    :	64
+2021-05-03 22:39:47,128 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - clip           :	5.0
+2021-05-03 22:39:47,128 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - dropout_keep   :	0.5
+2021-05-03 22:39:47,129 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - optimizer      :	adam
+2021-05-03 22:39:47,129 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - lr             :	0.001
+2021-05-03 22:39:47,129 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - tag_schema     :	iob
+2021-05-03 22:39:47,129 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - zeros          :	False
+2021-05-03 22:39:47,129 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - lower          :	True
+2021-05-03 22:39:52,366 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - Created model with fresh parameters.
+2021-05-03 22:39:52,912 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - start training
+2021-05-03 22:40:14,301 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:dev
+2021-05-03 22:40:20,666 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14602 tokens with 835 phrases; found: 503 phrases; correct: 47.
+
+2021-05-03 22:40:20,666 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  75.73%; precision:   9.34%; recall:   5.63%; FB1:   7.03
+
+2021-05-03 22:40:20,666 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  0
+
+2021-05-03 22:40:20,666 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:   3.20%; recall:   6.52%; FB1:   4.29  375
+
+2021-05-03 22:40:20,666 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:   1.85%; recall:   0.90%; FB1:   1.21  54
+
+2021-05-03 22:40:20,667 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:   0.00%; recall:   0.00%; FB1:   0.00  3
+
+2021-05-03 22:40:20,667 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  54.84%; recall:  31.19%; FB1:  39.77  62
+
+2021-05-03 22:40:20,667 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:   0.00%; recall:   0.00%; FB1:   0.00  9
+
+2021-05-03 22:40:20,920 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - new best dev f1 score:7.030
+2021-05-03 22:40:21,678 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - model saved
+2021-05-03 22:40:21,679 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:test
+2021-05-03 22:40:27,193 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14554 tokens with 830 phrases; found: 499 phrases; correct: 47.
+
+2021-05-03 22:40:27,193 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  75.76%; precision:   9.42%; recall:   5.66%; FB1:   7.07
+
+2021-05-03 22:40:27,193 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  0
+
+2021-05-03 22:40:27,194 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:   3.20%; recall:   6.52%; FB1:   4.29  375
+
+2021-05-03 22:40:27,194 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:   1.89%; recall:   0.93%; FB1:   1.24  53
+
+2021-05-03 22:40:27,194 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:   0.00%; recall:   0.00%; FB1:   0.00  3
+
+2021-05-03 22:40:27,194 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  57.63%; recall:  31.78%; FB1:  40.96  59
+
+2021-05-03 22:40:27,194 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:   0.00%; recall:   0.00%; FB1:   0.00  9
+
+2021-05-03 22:40:27,444 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - new best test f1 score:7.070
+2021-05-03 22:40:41,972 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:dev
+2021-05-03 22:40:47,594 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14602 tokens with 835 phrases; found: 1260 phrases; correct: 217.
+
+2021-05-03 22:40:47,595 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  81.66%; precision:  17.22%; recall:  25.99%; FB1:  20.72
+
+2021-05-03 22:40:47,595 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  7
+
+2021-05-03 22:40:47,595 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:   8.03%; recall:  10.87%; FB1:   9.24  249
+
+2021-05-03 22:40:47,595 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:   5.11%; recall:  10.81%; FB1:   6.94  235
+
+2021-05-03 22:40:47,595 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  31.25%; recall:  46.05%; FB1:  37.23  336
+
+2021-05-03 22:40:47,595 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  29.70%; recall:  55.05%; FB1:  38.59  202
+
+2021-05-03 22:40:47,596 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:   8.66%; recall:  11.76%; FB1:   9.98  231
+
+2021-05-03 22:40:47,780 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - new best dev f1 score:20.720
+2021-05-03 22:40:48,274 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - model saved
+2021-05-03 22:40:48,275 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:test
+2021-05-03 22:40:53,827 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14554 tokens with 830 phrases; found: 1252 phrases; correct: 217.
+
+2021-05-03 22:40:53,827 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  81.66%; precision:  17.33%; recall:  26.14%; FB1:  20.85
+
+2021-05-03 22:40:53,827 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  7
+
+2021-05-03 22:40:53,828 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:   8.03%; recall:  10.87%; FB1:   9.24  249
+
+2021-05-03 22:40:53,828 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:   5.13%; recall:  11.11%; FB1:   7.02  234
+
+2021-05-03 22:40:53,828 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  31.25%; recall:  46.05%; FB1:  37.23  336
+
+2021-05-03 22:40:53,828 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  30.77%; recall:  56.07%; FB1:  39.74  195
+
+2021-05-03 22:40:53,828 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:   8.66%; recall:  11.76%; FB1:   9.98  231
+
+2021-05-03 22:40:54,000 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - new best test f1 score:20.850
+2021-05-03 22:41:10,182 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:dev
+2021-05-03 22:41:16,663 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14602 tokens with 835 phrases; found: 1181 phrases; correct: 288.
+
+2021-05-03 22:41:16,664 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  85.10%; precision:  24.39%; recall:  34.49%; FB1:  28.57
+
+2021-05-03 22:41:16,664 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  17
+
+2021-05-03 22:41:16,664 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:   5.37%; recall:   5.98%; FB1:   5.66  205
+
+2021-05-03 22:41:16,664 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  13.04%; recall:  18.92%; FB1:  15.44  161
+
+2021-05-03 22:41:16,664 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  35.59%; recall:  69.30%; FB1:  47.02  444
+
+2021-05-03 22:41:16,665 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  45.04%; recall:  54.13%; FB1:  49.17  131
+
+2021-05-03 22:41:16,665 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  17.49%; recall:  22.94%; FB1:  19.85  223
+
+2021-05-03 22:41:16,884 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - new best dev f1 score:28.570
+2021-05-03 22:41:17,480 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - model saved
+2021-05-03 22:41:17,480 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:test
+2021-05-03 22:41:23,788 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14554 tokens with 830 phrases; found: 1174 phrases; correct: 286.
+
+2021-05-03 22:41:23,788 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  85.08%; precision:  24.36%; recall:  34.46%; FB1:  28.54
+
+2021-05-03 22:41:23,788 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  17
+
+2021-05-03 22:41:23,789 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:   5.37%; recall:   5.98%; FB1:   5.66  205
+
+2021-05-03 22:41:23,789 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  12.66%; recall:  18.52%; FB1:  15.04  158
+
+2021-05-03 22:41:23,789 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  35.59%; recall:  69.30%; FB1:  47.02  444
+
+2021-05-03 22:41:23,789 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  45.67%; recall:  54.21%; FB1:  49.57  127
+
+2021-05-03 22:41:23,789 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  17.49%; recall:  22.94%; FB1:  19.85  223
+
+2021-05-03 22:41:24,000 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - new best test f1 score:28.540
+2021-05-03 22:41:40,778 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:dev
+2021-05-03 22:41:47,262 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14602 tokens with 835 phrases; found: 1077 phrases; correct: 337.
+
+2021-05-03 22:41:47,262 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  88.29%; precision:  31.29%; recall:  40.36%; FB1:  35.25
+
+2021-05-03 22:41:47,263 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  25
+
+2021-05-03 22:41:47,263 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  37.38%; recall:  43.48%; FB1:  40.20  214
+
+2021-05-03 22:41:47,263 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  18.92%; recall:  31.53%; FB1:  23.65  185
+
+2021-05-03 22:41:47,263 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  40.17%; recall:  61.84%; FB1:  48.70  351
+
+2021-05-03 22:41:47,263 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  46.46%; recall:  54.13%; FB1:  50.00  127
+
+2021-05-03 22:41:47,264 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  12.57%; recall:  12.94%; FB1:  12.75  175
+
+2021-05-03 22:41:47,488 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - new best dev f1 score:35.250
+2021-05-03 22:41:48,087 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - model saved
+2021-05-03 22:41:48,087 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:test
+2021-05-03 22:41:54,573 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14554 tokens with 830 phrases; found: 1070 phrases; correct: 335.
+
+2021-05-03 22:41:54,573 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  88.28%; precision:  31.31%; recall:  40.36%; FB1:  35.26
+
+2021-05-03 22:41:54,573 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  25
+
+2021-05-03 22:41:54,573 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  37.38%; recall:  43.48%; FB1:  40.20  214
+
+2021-05-03 22:41:54,573 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  18.68%; recall:  31.48%; FB1:  23.45  182
+
+2021-05-03 22:41:54,574 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  40.17%; recall:  61.84%; FB1:  48.70  351
+
+2021-05-03 22:41:54,574 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  47.15%; recall:  54.21%; FB1:  50.43  123
+
+2021-05-03 22:41:54,574 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  12.57%; recall:  12.94%; FB1:  12.75  175
+
+2021-05-03 22:41:54,790 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - new best test f1 score:35.260
+2021-05-03 22:41:57,587 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - iteration:5,step:4/24,loss:31.7765
+2021-05-03 22:42:11,760 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:dev
+2021-05-03 22:42:18,321 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14602 tokens with 835 phrases; found: 1002 phrases; correct: 424.
+
+2021-05-03 22:42:18,321 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  90.02%; precision:  42.32%; recall:  50.78%; FB1:  46.16
+
+2021-05-03 22:42:18,321 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  26
+
+2021-05-03 22:42:18,322 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  60.00%; recall:  68.48%; FB1:  63.96  210
+
+2021-05-03 22:42:18,322 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  27.66%; recall:  35.14%; FB1:  30.95  141
+
+2021-05-03 22:42:18,322 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  48.68%; recall:  72.81%; FB1:  58.35  341
+
+2021-05-03 22:42:18,322 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  53.27%; recall:  52.29%; FB1:  52.78  107
+
+2021-05-03 22:42:18,322 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  20.34%; recall:  21.18%; FB1:  20.75  177
+
+2021-05-03 22:42:18,537 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - new best dev f1 score:46.160
+2021-05-03 22:42:19,137 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - model saved
+2021-05-03 22:42:19,138 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:test
+2021-05-03 22:42:25,634 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14554 tokens with 830 phrases; found: 997 phrases; correct: 420.
+
+2021-05-03 22:42:25,635 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  90.00%; precision:  42.13%; recall:  50.60%; FB1:  45.98
+
+2021-05-03 22:42:25,635 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  26
+
+2021-05-03 22:42:25,635 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  60.00%; recall:  68.48%; FB1:  63.96  210
+
+2021-05-03 22:42:25,635 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  26.09%; recall:  33.33%; FB1:  29.27  138
+
+2021-05-03 22:42:25,635 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  48.68%; recall:  72.81%; FB1:  58.35  341
+
+2021-05-03 22:42:25,636 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  53.33%; recall:  52.34%; FB1:  52.83  105
+
+2021-05-03 22:42:25,636 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  20.34%; recall:  21.18%; FB1:  20.75  177
+
+2021-05-03 22:42:25,852 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - new best test f1 score:45.980
+2021-05-03 22:42:42,789 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:dev
+2021-05-03 22:42:49,297 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14602 tokens with 835 phrases; found: 970 phrases; correct: 488.
+
+2021-05-03 22:42:49,298 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  90.52%; precision:  50.31%; recall:  58.44%; FB1:  54.07
+
+2021-05-03 22:42:49,298 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  29
+
+2021-05-03 22:42:49,298 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  67.49%; recall:  74.46%; FB1:  70.80  203
+
+2021-05-03 22:42:49,298 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  32.03%; recall:  36.94%; FB1:  34.31  128
+
+2021-05-03 22:42:49,299 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  54.17%; recall:  85.53%; FB1:  66.33  360
+
+2021-05-03 22:42:49,299 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  58.82%; recall:  55.05%; FB1:  56.87  102
+
+2021-05-03 22:42:49,299 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  37.16%; recall:  32.35%; FB1:  34.59  148
+
+2021-05-03 22:42:49,514 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - new best dev f1 score:54.070
+2021-05-03 22:42:50,136 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - model saved
+2021-05-03 22:42:50,137 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:test
+2021-05-03 22:42:56,597 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14554 tokens with 830 phrases; found: 965 phrases; correct: 484.
+
+2021-05-03 22:42:56,597 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  90.50%; precision:  50.16%; recall:  58.31%; FB1:  53.93
+
+2021-05-03 22:42:56,598 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  29
+
+2021-05-03 22:42:56,598 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  67.49%; recall:  74.46%; FB1:  70.80  203
+
+2021-05-03 22:42:56,598 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  30.40%; recall:  35.19%; FB1:  32.62  125
+
+2021-05-03 22:42:56,598 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  54.17%; recall:  85.53%; FB1:  66.33  360
+
+2021-05-03 22:42:56,598 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  59.00%; recall:  55.14%; FB1:  57.00  100
+
+2021-05-03 22:42:56,599 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  37.16%; recall:  32.35%; FB1:  34.59  148
+
+2021-05-03 22:42:56,812 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - new best test f1 score:53.930
+2021-05-03 22:43:13,637 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:dev
+2021-05-03 22:43:20,240 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14602 tokens with 835 phrases; found: 1000 phrases; correct: 525.
+
+2021-05-03 22:43:20,240 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  91.36%; precision:  52.50%; recall:  62.87%; FB1:  57.22
+
+2021-05-03 22:43:20,240 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  28
+
+2021-05-03 22:43:20,240 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  67.00%; recall:  73.91%; FB1:  70.28  203
+
+2021-05-03 22:43:20,240 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  34.09%; recall:  40.54%; FB1:  37.04  132
+
+2021-05-03 22:43:20,241 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  55.34%; recall:  88.60%; FB1:  68.13  365
+
+2021-05-03 22:43:20,241 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  60.38%; recall:  58.72%; FB1:  59.53  106
+
+2021-05-03 22:43:20,241 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  46.99%; recall:  45.88%; FB1:  46.43  166
+
+2021-05-03 22:43:20,458 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - new best dev f1 score:57.220
+2021-05-03 22:43:21,068 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - model saved
+2021-05-03 22:43:21,069 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:test
+2021-05-03 22:43:27,521 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14554 tokens with 830 phrases; found: 994 phrases; correct: 521.
+
+2021-05-03 22:43:27,521 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  91.34%; precision:  52.41%; recall:  62.77%; FB1:  57.13
+
+2021-05-03 22:43:27,522 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  28
+
+2021-05-03 22:43:27,522 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  67.00%; recall:  73.91%; FB1:  70.28  203
+
+2021-05-03 22:43:27,522 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  33.33%; recall:  39.81%; FB1:  36.29  129
+
+2021-05-03 22:43:27,522 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  55.34%; recall:  88.60%; FB1:  68.13  365
+
+2021-05-03 22:43:27,522 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  60.19%; recall:  57.94%; FB1:  59.05  103
+
+2021-05-03 22:43:27,523 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  46.99%; recall:  45.88%; FB1:  46.43  166
+
+2021-05-03 22:43:27,744 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - new best test f1 score:57.130
+2021-05-03 22:43:44,539 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:dev
+2021-05-03 22:43:51,097 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14602 tokens with 835 phrases; found: 966 phrases; correct: 542.
+
+2021-05-03 22:43:51,097 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  92.08%; precision:  56.11%; recall:  64.91%; FB1:  60.19
+
+2021-05-03 22:43:51,097 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  26
+
+2021-05-03 22:43:51,097 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  72.08%; recall:  77.17%; FB1:  74.54  197
+
+2021-05-03 22:43:51,098 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  35.51%; recall:  44.14%; FB1:  39.36  138
+
+2021-05-03 22:43:51,098 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  60.60%; recall:  89.04%; FB1:  72.11  335
+
+2021-05-03 22:43:51,098 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  57.14%; recall:  55.05%; FB1:  56.07  105
+
+2021-05-03 22:43:51,098 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  53.33%; recall:  51.76%; FB1:  52.54  165
+
+2021-05-03 22:43:51,317 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - new best dev f1 score:60.190
+2021-05-03 22:43:51,923 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - model saved
+2021-05-03 22:43:51,924 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:test
+2021-05-03 22:43:58,410 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14554 tokens with 830 phrases; found: 961 phrases; correct: 537.
+
+2021-05-03 22:43:58,411 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  92.05%; precision:  55.88%; recall:  64.70%; FB1:  59.97
+
+2021-05-03 22:43:58,411 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  26
+
+2021-05-03 22:43:58,411 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  72.08%; recall:  77.17%; FB1:  74.54  197
+
+2021-05-03 22:43:58,411 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  34.07%; recall:  42.59%; FB1:  37.86  135
+
+2021-05-03 22:43:58,411 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  60.60%; recall:  89.04%; FB1:  72.11  335
+
+2021-05-03 22:43:58,412 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  56.31%; recall:  54.21%; FB1:  55.24  103
+
+2021-05-03 22:43:58,412 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  53.33%; recall:  51.76%; FB1:  52.54  165
+
+2021-05-03 22:43:58,629 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - new best test f1 score:59.970
+2021-05-03 22:44:04,425 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - iteration:9,step:8/24,loss:14.3157
+2021-05-03 22:44:15,562 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:dev
+2021-05-03 22:44:22,055 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14602 tokens with 835 phrases; found: 973 phrases; correct: 557.
+
+2021-05-03 22:44:22,056 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  92.12%; precision:  57.25%; recall:  66.71%; FB1:  61.62
+
+2021-05-03 22:44:22,056 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  29
+
+2021-05-03 22:44:22,056 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  70.22%; recall:  85.87%; FB1:  77.26  225
+
+2021-05-03 22:44:22,056 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  47.42%; recall:  41.44%; FB1:  44.23  97
+
+2021-05-03 22:44:22,057 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  58.79%; recall:  85.09%; FB1:  69.53  330
+
+2021-05-03 22:44:22,057 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  65.59%; recall:  55.96%; FB1:  60.40  93
+
+2021-05-03 22:44:22,057 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  49.25%; recall:  57.65%; FB1:  53.12  199
+
+2021-05-03 22:44:22,272 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - new best dev f1 score:61.620
+2021-05-03 22:44:22,894 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - model saved
+2021-05-03 22:44:22,894 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:test
+2021-05-03 22:44:29,406 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14554 tokens with 830 phrases; found: 968 phrases; correct: 552.
+
+2021-05-03 22:44:29,406 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  92.10%; precision:  57.02%; recall:  66.51%; FB1:  61.40
+
+2021-05-03 22:44:29,406 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  29
+
+2021-05-03 22:44:29,406 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  70.22%; recall:  85.87%; FB1:  77.26  225
+
+2021-05-03 22:44:29,407 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  45.74%; recall:  39.81%; FB1:  42.57  94
+
+2021-05-03 22:44:29,407 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  58.79%; recall:  85.09%; FB1:  69.53  330
+
+2021-05-03 22:44:29,407 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  64.84%; recall:  55.14%; FB1:  59.60  91
+
+2021-05-03 22:44:29,407 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  49.25%; recall:  57.65%; FB1:  53.12  199
+
+2021-05-03 22:44:29,623 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - new best test f1 score:61.400
+2021-05-03 22:44:46,635 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:dev
+2021-05-03 22:44:53,219 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14602 tokens with 835 phrases; found: 1044 phrases; correct: 564.
+
+2021-05-03 22:44:53,220 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  91.12%; precision:  54.02%; recall:  67.54%; FB1:  60.03
+
+2021-05-03 22:44:53,220 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  32
+
+2021-05-03 22:44:53,220 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  73.68%; recall:  83.70%; FB1:  78.37  209
+
+2021-05-03 22:44:53,220 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  36.42%; recall:  49.55%; FB1:  41.98  151
+
+2021-05-03 22:44:53,220 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  60.44%; recall:  83.77%; FB1:  70.22  316
+
+2021-05-03 22:44:53,220 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  51.97%; recall:  60.55%; FB1:  55.93  127
+
+2021-05-03 22:44:53,221 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  46.89%; recall:  57.65%; FB1:  51.72  209
+
+2021-05-03 22:44:53,222 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:test
+2021-05-03 22:44:59,783 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14554 tokens with 830 phrases; found: 1039 phrases; correct: 560.
+
+2021-05-03 22:44:59,783 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  91.11%; precision:  53.90%; recall:  67.47%; FB1:  59.93
+
+2021-05-03 22:44:59,783 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  32
+
+2021-05-03 22:44:59,783 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  73.68%; recall:  83.70%; FB1:  78.37  209
+
+2021-05-03 22:44:59,784 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  35.57%; recall:  49.07%; FB1:  41.25  149
+
+2021-05-03 22:44:59,784 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  60.44%; recall:  83.77%; FB1:  70.22  316
+
+2021-05-03 22:44:59,784 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  51.61%; recall:  59.81%; FB1:  55.41  124
+
+2021-05-03 22:44:59,784 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  46.89%; recall:  57.65%; FB1:  51.72  209
+
+2021-05-03 22:45:16,631 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:dev
+2021-05-03 22:45:23,691 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14602 tokens with 835 phrases; found: 986 phrases; correct: 589.
+
+2021-05-03 22:45:23,692 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  92.68%; precision:  59.74%; recall:  70.54%; FB1:  64.69
+
+2021-05-03 22:45:23,692 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  28
+
+2021-05-03 22:45:23,692 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  76.56%; recall:  86.96%; FB1:  81.42  209
+
+2021-05-03 22:45:23,692 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  44.76%; recall:  57.66%; FB1:  50.39  143
+
+2021-05-03 22:45:23,693 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  62.93%; recall:  88.60%; FB1:  73.59  321
+
+2021-05-03 22:45:23,693 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  63.81%; recall:  61.47%; FB1:  62.62  105
+
+2021-05-03 22:45:23,694 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  53.33%; recall:  56.47%; FB1:  54.86  180
+
+2021-05-03 22:45:23,969 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - new best dev f1 score:64.690
+2021-05-03 22:45:24,668 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - model saved
+2021-05-03 22:45:24,669 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:test
+2021-05-03 22:45:32,994 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14554 tokens with 830 phrases; found: 981 phrases; correct: 584.
+
+2021-05-03 22:45:32,995 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  92.65%; precision:  59.53%; recall:  70.36%; FB1:  64.49
+
+2021-05-03 22:45:32,995 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  28
+
+2021-05-03 22:45:32,995 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  76.56%; recall:  86.96%; FB1:  81.42  209
+
+2021-05-03 22:45:32,995 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  43.57%; recall:  56.48%; FB1:  49.19  140
+
+2021-05-03 22:45:32,995 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  62.93%; recall:  88.60%; FB1:  73.59  321
+
+2021-05-03 22:45:32,996 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  63.11%; recall:  60.75%; FB1:  61.90  103
+
+2021-05-03 22:45:32,996 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  53.33%; recall:  56.47%; FB1:  54.86  180
+
+2021-05-03 22:45:33,270 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - new best test f1 score:64.490
+2021-05-03 22:45:54,334 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:dev
+2021-05-03 22:46:02,539 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14602 tokens with 835 phrases; found: 953 phrases; correct: 599.
+
+2021-05-03 22:46:02,539 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  93.15%; precision:  62.85%; recall:  71.74%; FB1:  67.00
+
+2021-05-03 22:46:02,540 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  30
+
+2021-05-03 22:46:02,540 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  76.08%; recall:  86.41%; FB1:  80.92  209
+
+2021-05-03 22:46:02,540 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  46.48%; recall:  59.46%; FB1:  52.17  142
+
+2021-05-03 22:46:02,540 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  68.86%; recall:  87.28%; FB1:  76.98  289
+
+2021-05-03 22:46:02,540 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  67.31%; recall:  64.22%; FB1:  65.73  104
+
+2021-05-03 22:46:02,540 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  58.66%; recall:  61.76%; FB1:  60.17  179
+
+2021-05-03 22:46:02,827 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - new best dev f1 score:67.000
+2021-05-03 22:46:03,521 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - model saved
+2021-05-03 22:46:03,522 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:test
+2021-05-03 22:46:11,238 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14554 tokens with 830 phrases; found: 947 phrases; correct: 595.
+
+2021-05-03 22:46:11,238 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  93.14%; precision:  62.83%; recall:  71.69%; FB1:  66.97
+
+2021-05-03 22:46:11,238 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  30
+
+2021-05-03 22:46:11,238 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  76.08%; recall:  86.41%; FB1:  80.92  209
+
+2021-05-03 22:46:11,239 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  46.04%; recall:  59.26%; FB1:  51.82  139
+
+2021-05-03 22:46:11,239 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  68.86%; recall:  87.28%; FB1:  76.98  289
+
+2021-05-03 22:46:11,239 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  67.33%; recall:  63.55%; FB1:  65.38  101
+
+2021-05-03 22:46:11,239 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  58.66%; recall:  61.76%; FB1:  60.17  179
+
+2021-05-03 22:46:11,480 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - new best test f1 score:66.970
+2021-05-03 22:46:20,244 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - iteration:13,step:12/24,loss:10.2102
+2021-05-03 22:46:28,943 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:dev
+2021-05-03 22:46:35,708 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14602 tokens with 835 phrases; found: 936 phrases; correct: 615.
+
+2021-05-03 22:46:35,709 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  93.64%; precision:  65.71%; recall:  73.65%; FB1:  69.45
+
+2021-05-03 22:46:35,709 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  30
+
+2021-05-03 22:46:35,709 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  76.19%; recall:  86.96%; FB1:  81.22  210
+
+2021-05-03 22:46:35,709 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  54.62%; recall:  63.96%; FB1:  58.92  130
+
+2021-05-03 22:46:35,710 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  73.05%; recall:  90.35%; FB1:  80.78  282
+
+2021-05-03 22:46:35,710 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  69.61%; recall:  65.14%; FB1:  67.30  102
+
+2021-05-03 22:46:35,710 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  58.79%; recall:  62.94%; FB1:  60.80  182
+
+2021-05-03 22:46:35,945 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - new best dev f1 score:69.450
+2021-05-03 22:46:36,589 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - model saved
+2021-05-03 22:46:36,589 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:test
+2021-05-03 22:46:43,413 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14554 tokens with 830 phrases; found: 931 phrases; correct: 611.
+
+2021-05-03 22:46:43,414 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  93.64%; precision:  65.63%; recall:  73.61%; FB1:  69.39
+
+2021-05-03 22:46:43,414 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  30
+
+2021-05-03 22:46:43,414 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  76.19%; recall:  86.96%; FB1:  81.22  210
+
+2021-05-03 22:46:43,414 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  53.91%; recall:  63.89%; FB1:  58.47  128
+
+2021-05-03 22:46:43,414 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  73.05%; recall:  90.35%; FB1:  80.78  282
+
+2021-05-03 22:46:43,414 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  69.70%; recall:  64.49%; FB1:  66.99  99
+
+2021-05-03 22:46:43,415 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  58.79%; recall:  62.94%; FB1:  60.80  182
+
+2021-05-03 22:46:43,656 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - new best test f1 score:69.390
+2021-05-03 22:47:01,133 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:dev
+2021-05-03 22:47:07,793 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14602 tokens with 835 phrases; found: 979 phrases; correct: 631.
+
+2021-05-03 22:47:07,794 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  93.69%; precision:  64.45%; recall:  75.57%; FB1:  69.57
+
+2021-05-03 22:47:07,794 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  31
+
+2021-05-03 22:47:07,794 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  76.53%; recall:  88.59%; FB1:  82.12  213
+
+2021-05-03 22:47:07,794 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  50.62%; recall:  73.87%; FB1:  60.07  162
+
+2021-05-03 22:47:07,794 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  72.28%; recall:  90.35%; FB1:  80.31  285
+
+2021-05-03 22:47:07,795 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  74.73%; recall:  62.39%; FB1:  68.00  91
+
+2021-05-03 22:47:07,795 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  56.85%; recall:  65.88%; FB1:  61.04  197
+
+2021-05-03 22:47:08,012 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - new best dev f1 score:69.570
+2021-05-03 22:47:08,651 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - model saved
+2021-05-03 22:47:08,651 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:test
+2021-05-03 22:47:15,331 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14554 tokens with 830 phrases; found: 974 phrases; correct: 626.
+
+2021-05-03 22:47:15,331 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  93.67%; precision:  64.27%; recall:  75.42%; FB1:  69.40
+
+2021-05-03 22:47:15,331 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  31
+
+2021-05-03 22:47:15,332 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  76.53%; recall:  88.59%; FB1:  82.12  213
+
+2021-05-03 22:47:15,332 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  49.69%; recall:  73.15%; FB1:  59.18  159
+
+2021-05-03 22:47:15,332 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  72.28%; recall:  90.35%; FB1:  80.31  285
+
+2021-05-03 22:47:15,332 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  74.16%; recall:  61.68%; FB1:  67.35  89
+
+2021-05-03 22:47:15,332 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  56.85%; recall:  65.88%; FB1:  61.04  197
+
+2021-05-03 22:47:15,551 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - new best test f1 score:69.400
+2021-05-03 22:47:32,784 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:dev
+2021-05-03 22:47:39,558 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14602 tokens with 835 phrases; found: 954 phrases; correct: 637.
+
+2021-05-03 22:47:39,558 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  94.25%; precision:  66.77%; recall:  76.29%; FB1:  71.21
+
+2021-05-03 22:47:39,559 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  30
+
+2021-05-03 22:47:39,559 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  78.92%; recall:  87.50%; FB1:  82.99  204
+
+2021-05-03 22:47:39,559 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  60.80%; recall:  68.47%; FB1:  64.41  125
+
+2021-05-03 22:47:39,559 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  69.49%; recall:  89.91%; FB1:  78.39  295
+
+2021-05-03 22:47:39,559 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  69.72%; recall:  69.72%; FB1:  69.72  109
+
+2021-05-03 22:47:39,560 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  62.30%; recall:  70.00%; FB1:  65.93  191
+
+2021-05-03 22:47:39,804 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - new best dev f1 score:71.210
+2021-05-03 22:47:40,468 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - model saved
+2021-05-03 22:47:40,469 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:test
+2021-05-03 22:47:47,120 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14554 tokens with 830 phrases; found: 949 phrases; correct: 633.
+
+2021-05-03 22:47:47,121 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  94.26%; precision:  66.70%; recall:  76.27%; FB1:  71.16
+
+2021-05-03 22:47:47,121 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  30
+
+2021-05-03 22:47:47,121 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  78.92%; recall:  87.50%; FB1:  82.99  204
+
+2021-05-03 22:47:47,121 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  60.16%; recall:  68.52%; FB1:  64.07  123
+
+2021-05-03 22:47:47,122 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  69.49%; recall:  89.91%; FB1:  78.39  295
+
+2021-05-03 22:47:47,122 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  69.81%; recall:  69.16%; FB1:  69.48  106
+
+2021-05-03 22:47:47,122 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  62.30%; recall:  70.00%; FB1:  65.93  191
+
+2021-05-03 22:47:47,354 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - new best test f1 score:71.160
+2021-05-03 22:48:04,650 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:dev
+2021-05-03 22:48:11,292 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14602 tokens with 835 phrases; found: 995 phrases; correct: 649.
+
+2021-05-03 22:48:11,292 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  93.94%; precision:  65.23%; recall:  77.72%; FB1:  70.93
+
+2021-05-03 22:48:11,292 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  33
+
+2021-05-03 22:48:11,293 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  79.81%; recall:  90.22%; FB1:  84.69  208
+
+2021-05-03 22:48:11,293 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  59.38%; recall:  68.47%; FB1:  63.60  128
+
+2021-05-03 22:48:11,293 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  67.43%; recall:  90.79%; FB1:  77.38  307
+
+2021-05-03 22:48:11,293 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  69.30%; recall:  72.48%; FB1:  70.85  114
+
+2021-05-03 22:48:11,293 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  59.02%; recall:  71.18%; FB1:  64.53  205
+
+2021-05-03 22:48:11,294 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:test
+2021-05-03 22:48:17,956 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14554 tokens with 830 phrases; found: 990 phrases; correct: 645.
+
+2021-05-03 22:48:17,957 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  93.94%; precision:  65.15%; recall:  77.71%; FB1:  70.88
+
+2021-05-03 22:48:17,957 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  33
+
+2021-05-03 22:48:17,957 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  79.81%; recall:  90.22%; FB1:  84.69  208
+
+2021-05-03 22:48:17,957 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  58.73%; recall:  68.52%; FB1:  63.25  126
+
+2021-05-03 22:48:17,957 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  67.43%; recall:  90.79%; FB1:  77.38  307
+
+2021-05-03 22:48:17,958 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  69.37%; recall:  71.96%; FB1:  70.64  111
+
+2021-05-03 22:48:17,958 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  59.02%; recall:  71.18%; FB1:  64.53  205
+
+2021-05-03 22:48:29,344 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - iteration:17,step:16/24,loss:8.1711
+2021-05-03 22:48:35,079 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:dev
+2021-05-03 22:48:41,595 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14602 tokens with 835 phrases; found: 969 phrases; correct: 672.
+
+2021-05-03 22:48:41,595 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  94.75%; precision:  69.35%; recall:  80.48%; FB1:  74.50
+
+2021-05-03 22:48:41,595 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  30
+
+2021-05-03 22:48:41,595 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  88.72%; recall:  94.02%; FB1:  91.29  195
+
+2021-05-03 22:48:41,596 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  55.48%; recall:  72.97%; FB1:  63.04  146
+
+2021-05-03 22:48:41,596 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  74.83%; recall:  93.86%; FB1:  83.27  286
+
+2021-05-03 22:48:41,596 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  74.53%; recall:  72.48%; FB1:  73.49  106
+
+2021-05-03 22:48:41,596 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  60.68%; recall:  73.53%; FB1:  66.49  206
+
+2021-05-03 22:48:41,817 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - new best dev f1 score:74.500
+2021-05-03 22:48:42,426 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - model saved
+2021-05-03 22:48:42,426 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:test
+2021-05-03 22:48:49,125 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14554 tokens with 830 phrases; found: 964 phrases; correct: 668.
+
+2021-05-03 22:48:49,125 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  94.75%; precision:  69.29%; recall:  80.48%; FB1:  74.47
+
+2021-05-03 22:48:49,125 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  30
+
+2021-05-03 22:48:49,126 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  88.72%; recall:  94.02%; FB1:  91.29  195
+
+2021-05-03 22:48:49,126 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  54.86%; recall:  73.15%; FB1:  62.70  144
+
+2021-05-03 22:48:49,126 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  74.83%; recall:  93.86%; FB1:  83.27  286
+
+2021-05-03 22:48:49,126 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  74.76%; recall:  71.96%; FB1:  73.33  103
+
+2021-05-03 22:48:49,126 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  60.68%; recall:  73.53%; FB1:  66.49  206
+
+2021-05-03 22:48:49,343 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - new best test f1 score:74.470
+2021-05-03 22:49:06,313 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:dev
+2021-05-03 22:49:12,833 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14602 tokens with 835 phrases; found: 951 phrases; correct: 674.
+
+2021-05-03 22:49:12,834 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  95.21%; precision:  70.87%; recall:  80.72%; FB1:  75.48
+
+2021-05-03 22:49:12,834 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  32
+
+2021-05-03 22:49:12,834 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  84.65%; recall:  92.93%; FB1:  88.60  202
+
+2021-05-03 22:49:12,834 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  69.49%; recall:  73.87%; FB1:  71.62  118
+
+2021-05-03 22:49:12,834 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  72.95%; recall:  93.42%; FB1:  81.92  292
+
+2021-05-03 22:49:12,834 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  89.13%; recall:  75.23%; FB1:  81.59  92
+
+2021-05-03 22:49:12,835 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  58.60%; recall:  74.12%; FB1:  65.45  215
+
+2021-05-03 22:49:13,053 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - new best dev f1 score:75.480
+2021-05-03 22:49:13,668 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - model saved
+2021-05-03 22:49:13,668 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:test
+2021-05-03 22:49:20,197 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14554 tokens with 830 phrases; found: 946 phrases; correct: 669.
+
+2021-05-03 22:49:20,198 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  95.19%; precision:  70.72%; recall:  80.60%; FB1:  75.34
+
+2021-05-03 22:49:20,198 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  32
+
+2021-05-03 22:49:20,198 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  84.65%; recall:  92.93%; FB1:  88.60  202
+
+2021-05-03 22:49:20,198 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  68.70%; recall:  73.15%; FB1:  70.85  115
+
+2021-05-03 22:49:20,199 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  72.95%; recall:  93.42%; FB1:  81.92  292
+
+2021-05-03 22:49:20,199 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  88.89%; recall:  74.77%; FB1:  81.22  90
+
+2021-05-03 22:49:20,199 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  58.60%; recall:  74.12%; FB1:  65.45  215
+
+2021-05-03 22:49:20,419 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - new best test f1 score:75.340
+2021-05-03 22:49:37,440 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:dev
+2021-05-03 22:49:43,993 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14602 tokens with 835 phrases; found: 931 phrases; correct: 693.
+
+2021-05-03 22:49:43,994 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  96.17%; precision:  74.44%; recall:  82.99%; FB1:  78.48
+
+2021-05-03 22:49:43,994 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  31
+
+2021-05-03 22:49:43,994 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  89.80%; recall:  95.65%; FB1:  92.63  196
+
+2021-05-03 22:49:43,994 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  67.19%; recall:  77.48%; FB1:  71.97  128
+
+2021-05-03 22:49:43,995 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  77.42%; recall:  94.74%; FB1:  85.21  279
+
+2021-05-03 22:49:43,995 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  83.33%; recall:  77.98%; FB1:  80.57  102
+
+2021-05-03 22:49:43,995 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  66.67%; recall:  76.47%; FB1:  71.23  195
+
+2021-05-03 22:49:44,217 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - new best dev f1 score:78.480
+2021-05-03 22:49:44,836 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - model saved
+2021-05-03 22:49:44,836 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:test
+2021-05-03 22:49:51,415 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14554 tokens with 830 phrases; found: 926 phrases; correct: 688.
+
+2021-05-03 22:49:51,416 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  96.16%; precision:  74.30%; recall:  82.89%; FB1:  78.36
+
+2021-05-03 22:49:51,416 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  31
+
+2021-05-03 22:49:51,416 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  89.80%; recall:  95.65%; FB1:  92.63  196
+
+2021-05-03 22:49:51,416 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  66.40%; recall:  76.85%; FB1:  71.24  125
+
+2021-05-03 22:49:51,416 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  77.42%; recall:  94.74%; FB1:  85.21  279
+
+2021-05-03 22:49:51,417 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  83.00%; recall:  77.57%; FB1:  80.19  100
+
+2021-05-03 22:49:51,417 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  66.67%; recall:  76.47%; FB1:  71.23  195
+
+2021-05-03 22:49:51,640 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - new best test f1 score:78.360
+2021-05-03 22:50:08,681 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:dev
+2021-05-03 22:50:15,213 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14602 tokens with 835 phrases; found: 888 phrases; correct: 692.
+
+2021-05-03 22:50:15,213 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  96.78%; precision:  77.93%; recall:  82.87%; FB1:  80.33
+
+2021-05-03 22:50:15,213 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  30
+
+2021-05-03 22:50:15,214 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  92.11%; recall:  95.11%; FB1:  93.58  190
+
+2021-05-03 22:50:15,214 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  70.94%; recall:  74.77%; FB1:  72.81  117
+
+2021-05-03 22:50:15,214 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  82.82%; recall:  95.18%; FB1:  88.57  262
+
+2021-05-03 22:50:15,214 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  79.09%; recall:  79.82%; FB1:  79.45  110
+
+2021-05-03 22:50:15,214 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  72.63%; recall:  76.47%; FB1:  74.50  179
+
+2021-05-03 22:50:15,431 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - new best dev f1 score:80.330
+2021-05-03 22:50:16,047 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - model saved
+2021-05-03 22:50:16,047 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:test
+2021-05-03 22:50:22,596 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14554 tokens with 830 phrases; found: 883 phrases; correct: 688.
+
+2021-05-03 22:50:22,596 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  96.79%; precision:  77.92%; recall:  82.89%; FB1:  80.33
+
+2021-05-03 22:50:22,596 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  30
+
+2021-05-03 22:50:22,597 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  92.11%; recall:  95.11%; FB1:  93.58  190
+
+2021-05-03 22:50:22,597 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  70.43%; recall:  75.00%; FB1:  72.65  115
+
+2021-05-03 22:50:22,597 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  82.82%; recall:  95.18%; FB1:  88.57  262
+
+2021-05-03 22:50:22,597 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  79.44%; recall:  79.44%; FB1:  79.44  107
+
+2021-05-03 22:50:22,597 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  72.63%; recall:  76.47%; FB1:  74.50  179
+
+2021-05-03 22:50:22,815 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - new best test f1 score:80.330
+2021-05-03 22:50:37,074 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - iteration:21,step:20/24,loss:6.9190
+2021-05-03 22:50:39,881 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:dev
+2021-05-03 22:50:46,399 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14602 tokens with 835 phrases; found: 873 phrases; correct: 696.
+
+2021-05-03 22:50:46,399 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  96.87%; precision:  79.73%; recall:  83.35%; FB1:  81.50
+
+2021-05-03 22:50:46,399 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  28
+
+2021-05-03 22:50:46,399 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  93.51%; recall:  94.02%; FB1:  93.77  185
+
+2021-05-03 22:50:46,400 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  64.93%; recall:  78.38%; FB1:  71.02  134
+
+2021-05-03 22:50:46,400 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  89.17%; recall:  93.86%; FB1:  91.45  240
+
+2021-05-03 22:50:46,400 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  81.48%; recall:  80.73%; FB1:  81.11  108
+
+2021-05-03 22:50:46,400 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  75.28%; recall:  78.82%; FB1:  77.01  178
+
+2021-05-03 22:50:46,624 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - new best dev f1 score:81.500
+2021-05-03 22:50:47,250 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - model saved
+2021-05-03 22:50:47,268 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:test
+2021-05-03 22:50:53,805 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14554 tokens with 830 phrases; found: 868 phrases; correct: 692.
+
+2021-05-03 22:50:53,806 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  96.88%; precision:  79.72%; recall:  83.37%; FB1:  81.51
+
+2021-05-03 22:50:53,806 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  28
+
+2021-05-03 22:50:53,806 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  93.51%; recall:  94.02%; FB1:  93.77  185
+
+2021-05-03 22:50:53,806 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  64.39%; recall:  78.70%; FB1:  70.83  132
+
+2021-05-03 22:50:53,807 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  89.17%; recall:  93.86%; FB1:  91.45  240
+
+2021-05-03 22:50:53,807 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  81.90%; recall:  80.37%; FB1:  81.13  105
+
+2021-05-03 22:50:53,807 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  75.28%; recall:  78.82%; FB1:  77.01  178
+
+2021-05-03 22:50:54,029 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - new best test f1 score:81.510
+2021-05-03 22:51:10,982 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:dev
+2021-05-03 22:51:17,535 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14602 tokens with 835 phrases; found: 920 phrases; correct: 717.
+
+2021-05-03 22:51:17,536 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  96.69%; precision:  77.93%; recall:  85.87%; FB1:  81.71
+
+2021-05-03 22:51:17,536 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  32
+
+2021-05-03 22:51:17,536 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  96.76%; recall:  97.28%; FB1:  97.02  185
+
+2021-05-03 22:51:17,536 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  58.49%; recall:  83.78%; FB1:  68.89  159
+
+2021-05-03 22:51:17,536 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  84.15%; recall:  97.81%; FB1:  90.47  265
+
+2021-05-03 22:51:17,536 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  87.63%; recall:  77.98%; FB1:  82.52  97
+
+2021-05-03 22:51:17,537 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  75.27%; recall:  80.59%; FB1:  77.84  182
+
+2021-05-03 22:51:17,764 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - new best dev f1 score:81.710
+2021-05-03 22:51:18,382 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - model saved
+2021-05-03 22:51:18,383 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:test
+2021-05-03 22:51:24,939 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14554 tokens with 830 phrases; found: 915 phrases; correct: 712.
+
+2021-05-03 22:51:24,939 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  96.68%; precision:  77.81%; recall:  85.78%; FB1:  81.60
+
+2021-05-03 22:51:24,940 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  32
+
+2021-05-03 22:51:24,940 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  96.76%; recall:  97.28%; FB1:  97.02  185
+
+2021-05-03 22:51:24,940 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  57.69%; recall:  83.33%; FB1:  68.18  156
+
+2021-05-03 22:51:24,940 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  84.15%; recall:  97.81%; FB1:  90.47  265
+
+2021-05-03 22:51:24,940 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  87.37%; recall:  77.57%; FB1:  82.18  95
+
+2021-05-03 22:51:24,941 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  75.27%; recall:  80.59%; FB1:  77.84  182
+
+2021-05-03 22:51:25,163 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - new best test f1 score:81.600
+2021-05-03 22:51:42,194 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:dev
+2021-05-03 22:51:48,745 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14602 tokens with 835 phrases; found: 922 phrases; correct: 703.
+
+2021-05-03 22:51:48,746 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  96.38%; precision:  76.25%; recall:  84.19%; FB1:  80.02
+
+2021-05-03 22:51:48,746 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  33
+
+2021-05-03 22:51:48,746 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  91.67%; recall:  95.65%; FB1:  93.62  192
+
+2021-05-03 22:51:48,746 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  75.89%; recall:  76.58%; FB1:  76.23  112
+
+2021-05-03 22:51:48,746 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  75.97%; recall:  94.30%; FB1:  84.15  283
+
+2021-05-03 22:51:48,747 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  79.65%; recall:  82.57%; FB1:  81.08  113
+
+2021-05-03 22:51:48,747 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  72.49%; recall:  80.59%; FB1:  76.32  189
+
+2021-05-03 22:51:48,748 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:test
+2021-05-03 22:51:55,289 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14554 tokens with 830 phrases; found: 917 phrases; correct: 699.
+
+2021-05-03 22:51:55,290 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  96.39%; precision:  76.23%; recall:  84.22%; FB1:  80.02
+
+2021-05-03 22:51:55,290 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  33
+
+2021-05-03 22:51:55,290 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  91.67%; recall:  95.65%; FB1:  93.62  192
+
+2021-05-03 22:51:55,290 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  75.45%; recall:  76.85%; FB1:  76.15  110
+
+2021-05-03 22:51:55,290 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  75.97%; recall:  94.30%; FB1:  84.15  283
+
+2021-05-03 22:51:55,290 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  80.00%; recall:  82.24%; FB1:  81.11  110
+
+2021-05-03 22:51:55,291 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  72.49%; recall:  80.59%; FB1:  76.32  189
+
+2021-05-03 22:52:12,342 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:dev
+2021-05-03 22:52:18,874 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14602 tokens with 835 phrases; found: 866 phrases; correct: 726.
+
+2021-05-03 22:52:18,874 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  97.64%; precision:  83.83%; recall:  86.95%; FB1:  85.36
+
+2021-05-03 22:52:18,874 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  31
+
+2021-05-03 22:52:18,874 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  98.36%; recall:  97.83%; FB1:  98.09  183
+
+2021-05-03 22:52:18,875 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  73.02%; recall:  82.88%; FB1:  77.64  126
+
+2021-05-03 22:52:18,875 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  88.10%; recall:  97.37%; FB1:  92.50  252
+
+2021-05-03 22:52:18,875 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  87.25%; recall:  81.65%; FB1:  84.36  102
+
+2021-05-03 22:52:18,875 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  83.14%; recall:  84.12%; FB1:  83.63  172
+
+2021-05-03 22:52:19,094 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - new best dev f1 score:85.360
+2021-05-03 22:52:19,714 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - model saved
+2021-05-03 22:52:19,714 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:test
+2021-05-03 22:52:26,394 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14554 tokens with 830 phrases; found: 861 phrases; correct: 722.
+
+2021-05-03 22:52:26,394 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  97.66%; precision:  83.86%; recall:  86.99%; FB1:  85.39
+
+2021-05-03 22:52:26,395 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  31
+
+2021-05-03 22:52:26,395 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  98.36%; recall:  97.83%; FB1:  98.09  183
+
+2021-05-03 22:52:26,395 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  72.58%; recall:  83.33%; FB1:  77.59  124
+
+2021-05-03 22:52:26,395 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  88.10%; recall:  97.37%; FB1:  92.50  252
+
+2021-05-03 22:52:26,395 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  87.88%; recall:  81.31%; FB1:  84.47  99
+
+2021-05-03 22:52:26,395 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  83.14%; recall:  84.12%; FB1:  83.63  172
+
+2021-05-03 22:52:26,621 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - new best test f1 score:85.390
+2021-05-03 22:52:43,696 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - iteration:26,step:0/24,loss:5.6091
+2021-05-03 22:52:43,696 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:dev
+2021-05-03 22:52:50,255 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14602 tokens with 835 phrases; found: 905 phrases; correct: 713.
+
+2021-05-03 22:52:50,255 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  97.07%; precision:  78.78%; recall:  85.39%; FB1:  81.95
+
+2021-05-03 22:52:50,255 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  32
+
+2021-05-03 22:52:50,256 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  95.72%; recall:  97.28%; FB1:  96.50  187
+
+2021-05-03 22:52:50,256 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  81.82%; recall:  81.08%; FB1:  81.45  110
+
+2021-05-03 22:52:50,256 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  78.34%; recall:  95.18%; FB1:  85.94  277
+
+2021-05-03 22:52:50,256 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  83.33%; recall:  82.57%; FB1:  82.95  108
+
+2021-05-03 22:52:50,256 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  71.73%; recall:  80.59%; FB1:  75.90  191
+
+2021-05-03 22:52:50,257 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:test
+2021-05-03 22:52:56,786 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14554 tokens with 830 phrases; found: 900 phrases; correct: 709.
+
+2021-05-03 22:52:56,787 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  97.08%; precision:  78.78%; recall:  85.42%; FB1:  81.97
+
+2021-05-03 22:52:56,787 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  32
+
+2021-05-03 22:52:56,787 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  95.72%; recall:  97.28%; FB1:  96.50  187
+
+2021-05-03 22:52:56,787 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  81.48%; recall:  81.48%; FB1:  81.48  108
+
+2021-05-03 22:52:56,788 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  78.34%; recall:  95.18%; FB1:  85.94  277
+
+2021-05-03 22:52:56,788 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  83.81%; recall:  82.24%; FB1:  83.02  105
+
+2021-05-03 22:52:56,788 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  71.73%; recall:  80.59%; FB1:  75.90  191
+
+2021-05-03 22:53:13,778 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:dev
+2021-05-03 22:53:20,397 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14602 tokens with 835 phrases; found: 923 phrases; correct: 707.
+
+2021-05-03 22:53:20,398 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  96.58%; precision:  76.60%; recall:  84.67%; FB1:  80.43
+
+2021-05-03 22:53:20,398 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  33
+
+2021-05-03 22:53:20,398 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  92.51%; recall:  94.02%; FB1:  93.26  187
+
+2021-05-03 22:53:20,398 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  76.72%; recall:  80.18%; FB1:  78.41  116
+
+2021-05-03 22:53:20,398 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  74.64%; recall:  91.67%; FB1:  82.28  280
+
+2021-05-03 22:53:20,399 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  82.46%; recall:  86.24%; FB1:  84.30  114
+
+2021-05-03 22:53:20,399 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  73.58%; recall:  83.53%; FB1:  78.24  193
+
+2021-05-03 22:53:20,400 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:test
+2021-05-03 22:53:26,944 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14554 tokens with 830 phrases; found: 918 phrases; correct: 703.
+
+2021-05-03 22:53:26,945 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  96.59%; precision:  76.58%; recall:  84.70%; FB1:  80.43
+
+2021-05-03 22:53:26,945 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  33
+
+2021-05-03 22:53:26,945 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  92.51%; recall:  94.02%; FB1:  93.26  187
+
+2021-05-03 22:53:26,945 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  76.32%; recall:  80.56%; FB1:  78.38  114
+
+2021-05-03 22:53:26,946 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  74.64%; recall:  91.67%; FB1:  82.28  280
+
+2021-05-03 22:53:26,946 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  82.88%; recall:  85.98%; FB1:  84.40  111
+
+2021-05-03 22:53:26,946 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  73.58%; recall:  83.53%; FB1:  78.24  193
+
+2021-05-03 22:53:43,906 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:dev
+2021-05-03 22:53:50,473 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14602 tokens with 835 phrases; found: 868 phrases; correct: 733.
+
+2021-05-03 22:53:50,473 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  97.97%; precision:  84.45%; recall:  87.78%; FB1:  86.08
+
+2021-05-03 22:53:50,474 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  32
+
+2021-05-03 22:53:50,474 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  98.37%; recall:  98.37%; FB1:  98.37  184
+
+2021-05-03 22:53:50,474 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  76.38%; recall:  87.39%; FB1:  81.51  127
+
+2021-05-03 22:53:50,474 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  87.06%; recall:  97.37%; FB1:  91.93  255
+
+2021-05-03 22:53:50,474 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  93.62%; recall:  80.73%; FB1:  86.70  94
+
+2021-05-03 22:53:50,475 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  82.39%; recall:  85.29%; FB1:  83.82  176
+
+2021-05-03 22:53:50,692 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - new best dev f1 score:86.080
+2021-05-03 22:53:51,305 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - model saved
+2021-05-03 22:53:51,305 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:test
+2021-05-03 22:53:58,044 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14554 tokens with 830 phrases; found: 863 phrases; correct: 729.
+
+2021-05-03 22:53:58,044 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  98.01%; precision:  84.47%; recall:  87.83%; FB1:  86.12
+
+2021-05-03 22:53:58,045 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  32
+
+2021-05-03 22:53:58,045 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  98.37%; recall:  98.37%; FB1:  98.37  184
+
+2021-05-03 22:53:58,045 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  76.42%; recall:  87.04%; FB1:  81.39  123
+
+2021-05-03 22:53:58,045 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  87.06%; recall:  97.37%; FB1:  91.93  255
+
+2021-05-03 22:53:58,045 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  93.55%; recall:  81.31%; FB1:  87.00  93
+
+2021-05-03 22:53:58,045 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  82.39%; recall:  85.29%; FB1:  83.82  176
+
+2021-05-03 22:53:58,268 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - new best test f1 score:86.120
+2021-05-03 22:54:15,270 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:dev
+2021-05-03 22:54:21,798 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14602 tokens with 835 phrases; found: 872 phrases; correct: 739.
+
+2021-05-03 22:54:21,798 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  98.05%; precision:  84.75%; recall:  88.50%; FB1:  86.58
+
+2021-05-03 22:54:21,799 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  32
+
+2021-05-03 22:54:21,799 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  97.28%; recall:  97.28%; FB1:  97.28  184
+
+2021-05-03 22:54:21,799 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  80.17%; recall:  87.39%; FB1:  83.62  121
+
+2021-05-03 22:54:21,799 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  90.24%; recall:  97.37%; FB1:  93.67  246
+
+2021-05-03 22:54:21,799 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  86.24%; recall:  86.24%; FB1:  86.24  109
+
+2021-05-03 22:54:21,799 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  81.67%; recall:  86.47%; FB1:  84.00  180
+
+2021-05-03 22:54:22,018 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - new best dev f1 score:86.580
+2021-05-03 22:54:22,636 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - model saved
+2021-05-03 22:54:22,636 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:test
+2021-05-03 22:54:29,150 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14554 tokens with 830 phrases; found: 867 phrases; correct: 734.
+
+2021-05-03 22:54:29,150 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  98.04%; precision:  84.66%; recall:  88.43%; FB1:  86.51
+
+2021-05-03 22:54:29,151 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  32
+
+2021-05-03 22:54:29,151 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  97.28%; recall:  97.28%; FB1:  97.28  184
+
+2021-05-03 22:54:29,151 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  79.66%; recall:  87.04%; FB1:  83.19  118
+
+2021-05-03 22:54:29,151 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  90.24%; recall:  97.37%; FB1:  93.67  246
+
+2021-05-03 22:54:29,151 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  85.98%; recall:  85.98%; FB1:  85.98  107
+
+2021-05-03 22:54:29,152 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  81.67%; recall:  86.47%; FB1:  84.00  180
+
+2021-05-03 22:54:29,371 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - new best test f1 score:86.510
+2021-05-03 22:54:46,373 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:dev
+2021-05-03 22:54:52,922 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14602 tokens with 835 phrases; found: 902 phrases; correct: 742.
+
+2021-05-03 22:54:52,922 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  97.70%; precision:  82.26%; recall:  88.86%; FB1:  85.43
+
+2021-05-03 22:54:52,922 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  32
+
+2021-05-03 22:54:52,922 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  97.30%; recall:  97.83%; FB1:  97.56  185
+
+2021-05-03 22:54:52,923 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  79.03%; recall:  88.29%; FB1:  83.40  124
+
+2021-05-03 22:54:52,923 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  87.65%; recall:  96.49%; FB1:  91.86  251
+
+2021-05-03 22:54:52,923 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  79.83%; recall:  87.16%; FB1:  83.33  119
+
+2021-05-03 22:54:52,923 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  78.01%; recall:  87.65%; FB1:  82.55  191
+
+2021-05-03 22:54:52,924 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:test
+2021-05-03 22:54:59,456 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14554 tokens with 830 phrases; found: 897 phrases; correct: 738.
+
+2021-05-03 22:54:59,456 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  97.71%; precision:  82.27%; recall:  88.92%; FB1:  85.47
+
+2021-05-03 22:54:59,456 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  32
+
+2021-05-03 22:54:59,456 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  97.30%; recall:  97.83%; FB1:  97.56  185
+
+2021-05-03 22:54:59,457 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  78.69%; recall:  88.89%; FB1:  83.48  122
+
+2021-05-03 22:54:59,457 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  87.65%; recall:  96.49%; FB1:  91.86  251
+
+2021-05-03 22:54:59,457 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  80.17%; recall:  86.92%; FB1:  83.41  116
+
+2021-05-03 22:54:59,457 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  78.01%; recall:  87.65%; FB1:  82.55  191
+
+2021-05-03 22:55:02,364 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - iteration:30,step:4/24,loss:4.8739
+2021-05-03 22:55:16,467 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:dev
+2021-05-03 22:55:23,231 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14602 tokens with 835 phrases; found: 907 phrases; correct: 749.
+
+2021-05-03 22:55:23,231 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  97.55%; precision:  82.58%; recall:  89.70%; FB1:  85.99
+
+2021-05-03 22:55:23,232 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  33
+
+2021-05-03 22:55:23,232 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  96.76%; recall:  97.28%; FB1:  97.02  185
+
+2021-05-03 22:55:23,232 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  68.00%; recall:  91.89%; FB1:  78.16  150
+
+2021-05-03 22:55:23,232 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  89.92%; recall:  97.81%; FB1:  93.70  248
+
+2021-05-03 22:55:23,232 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  87.62%; recall:  84.40%; FB1:  85.98  105
+
+2021-05-03 22:55:23,233 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  82.26%; recall:  90.00%; FB1:  85.96  186
+
+2021-05-03 22:55:23,234 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:test
+2021-05-03 22:55:29,841 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14554 tokens with 830 phrases; found: 902 phrases; correct: 744.
+
+2021-05-03 22:55:29,841 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  97.54%; precision:  82.48%; recall:  89.64%; FB1:  85.91
+
+2021-05-03 22:55:29,842 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  33
+
+2021-05-03 22:55:29,842 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  96.76%; recall:  97.28%; FB1:  97.02  185
+
+2021-05-03 22:55:29,842 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  67.35%; recall:  91.67%; FB1:  77.65  147
+
+2021-05-03 22:55:29,842 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  89.92%; recall:  97.81%; FB1:  93.70  248
+
+2021-05-03 22:55:29,842 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  87.38%; recall:  84.11%; FB1:  85.71  103
+
+2021-05-03 22:55:29,843 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  82.26%; recall:  90.00%; FB1:  85.96  186
+
+2021-05-03 22:55:46,794 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:dev
+2021-05-03 22:55:53,411 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14602 tokens with 835 phrases; found: 880 phrases; correct: 755.
+
+2021-05-03 22:55:53,411 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  98.27%; precision:  85.80%; recall:  90.42%; FB1:  88.05
+
+2021-05-03 22:55:53,411 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  32
+
+2021-05-03 22:55:53,412 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  98.38%; recall:  98.91%; FB1:  98.64  185
+
+2021-05-03 22:55:53,412 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  78.29%; recall:  90.99%; FB1:  84.17  129
+
+2021-05-03 22:55:53,412 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  91.02%; recall:  97.81%; FB1:  94.29  245
+
+2021-05-03 22:55:53,412 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  87.16%; recall:  87.16%; FB1:  87.16  109
+
+2021-05-03 22:55:53,412 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  85.56%; recall:  90.59%; FB1:  88.00  180
+
+2021-05-03 22:55:53,635 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - new best dev f1 score:88.050
+2021-05-03 22:55:54,270 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - model saved
+2021-05-03 22:55:54,270 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:test
+2021-05-03 22:56:01,027 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14554 tokens with 830 phrases; found: 875 phrases; correct: 750.
+
+2021-05-03 22:56:01,027 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  98.26%; precision:  85.71%; recall:  90.36%; FB1:  87.98
+
+2021-05-03 22:56:01,027 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  32
+
+2021-05-03 22:56:01,027 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  98.38%; recall:  98.91%; FB1:  98.64  185
+
+2021-05-03 22:56:01,028 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  77.78%; recall:  90.74%; FB1:  83.76  126
+
+2021-05-03 22:56:01,028 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  91.02%; recall:  97.81%; FB1:  94.29  245
+
+2021-05-03 22:56:01,028 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  86.92%; recall:  86.92%; FB1:  86.92  107
+
+2021-05-03 22:56:01,028 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  85.56%; recall:  90.59%; FB1:  88.00  180
+
+2021-05-03 22:56:01,248 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - new best test f1 score:87.980
+2021-05-03 22:56:18,387 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:dev
+2021-05-03 22:56:24,921 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14602 tokens with 835 phrases; found: 871 phrases; correct: 755.
+
+2021-05-03 22:56:24,921 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  98.53%; precision:  86.68%; recall:  90.42%; FB1:  88.51
+
+2021-05-03 22:56:24,921 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  32
+
+2021-05-03 22:56:24,922 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  97.84%; recall:  98.37%; FB1:  98.10  185
+
+2021-05-03 22:56:24,922 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  83.20%; recall:  93.69%; FB1:  88.14  125
+
+2021-05-03 22:56:24,922 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  89.52%; recall:  97.37%; FB1:  93.28  248
+
+2021-05-03 22:56:24,922 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  87.74%; recall:  85.32%; FB1:  86.51  106
+
+2021-05-03 22:56:24,922 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  88.57%; recall:  91.18%; FB1:  89.86  175
+
+2021-05-03 22:56:25,143 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - new best dev f1 score:88.510
+2021-05-03 22:56:25,756 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - model saved
+2021-05-03 22:56:25,756 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:test
+2021-05-03 22:56:32,332 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14554 tokens with 830 phrases; found: 866 phrases; correct: 751.
+
+2021-05-03 22:56:32,332 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  98.54%; precision:  86.72%; recall:  90.48%; FB1:  88.56
+
+2021-05-03 22:56:32,332 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  32
+
+2021-05-03 22:56:32,333 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  97.84%; recall:  98.37%; FB1:  98.10  185
+
+2021-05-03 22:56:32,333 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  82.93%; recall:  94.44%; FB1:  88.31  123
+
+2021-05-03 22:56:32,333 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  89.52%; recall:  97.37%; FB1:  93.28  248
+
+2021-05-03 22:56:32,333 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  88.35%; recall:  85.05%; FB1:  86.67  103
+
+2021-05-03 22:56:32,334 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  88.57%; recall:  91.18%; FB1:  89.86  175
+
+2021-05-03 22:56:32,557 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - new best test f1 score:88.560
+2021-05-03 22:56:49,578 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:dev
+2021-05-03 22:56:56,109 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14602 tokens with 835 phrases; found: 862 phrases; correct: 755.
+
+2021-05-03 22:56:56,109 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  98.65%; precision:  87.59%; recall:  90.42%; FB1:  88.98
+
+2021-05-03 22:56:56,110 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  32
+
+2021-05-03 22:56:56,110 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  98.37%; recall:  98.37%; FB1:  98.37  184
+
+2021-05-03 22:56:56,110 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  77.10%; recall:  90.99%; FB1:  83.47  131
+
+2021-05-03 22:56:56,110 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  94.12%; recall:  98.25%; FB1:  96.14  238
+
+2021-05-03 22:56:56,110 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  90.38%; recall:  86.24%; FB1:  88.26  104
+
+2021-05-03 22:56:56,111 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  89.60%; recall:  91.18%; FB1:  90.38  173
+
+2021-05-03 22:56:56,332 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - new best dev f1 score:88.980
+2021-05-03 22:56:56,954 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - model saved
+2021-05-03 22:56:56,954 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:test
+2021-05-03 22:57:03,546 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14554 tokens with 830 phrases; found: 857 phrases; correct: 750.
+
+2021-05-03 22:57:03,546 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  98.65%; precision:  87.51%; recall:  90.36%; FB1:  88.92
+
+2021-05-03 22:57:03,546 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  32
+
+2021-05-03 22:57:03,546 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  98.37%; recall:  98.37%; FB1:  98.37  184
+
+2021-05-03 22:57:03,546 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  76.56%; recall:  90.74%; FB1:  83.05  128
+
+2021-05-03 22:57:03,547 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  94.12%; recall:  98.25%; FB1:  96.14  238
+
+2021-05-03 22:57:03,547 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  90.20%; recall:  85.98%; FB1:  88.04  102
+
+2021-05-03 22:57:03,547 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  89.60%; recall:  91.18%; FB1:  90.38  173
+
+2021-05-03 22:57:03,776 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - new best test f1 score:88.920
+2021-05-03 22:57:09,424 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - iteration:34,step:8/24,loss:4.0815
+2021-05-03 22:57:20,791 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:dev
+2021-05-03 22:57:27,365 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14602 tokens with 835 phrases; found: 863 phrases; correct: 760.
+
+2021-05-03 22:57:27,365 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  98.80%; precision:  88.06%; recall:  91.02%; FB1:  89.52
+
+2021-05-03 22:57:27,365 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  32
+
+2021-05-03 22:57:27,365 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  97.30%; recall:  97.83%; FB1:  97.56  185
+
+2021-05-03 22:57:27,365 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  85.47%; recall:  90.09%; FB1:  87.72  117
+
+2021-05-03 22:57:27,366 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  93.36%; recall:  98.68%; FB1:  95.95  241
+
+2021-05-03 22:57:27,366 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  86.61%; recall:  88.99%; FB1:  87.78  112
+
+2021-05-03 22:57:27,366 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  89.77%; recall:  92.94%; FB1:  91.33  176
+
+2021-05-03 22:57:27,592 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - new best dev f1 score:89.520
+2021-05-03 22:57:28,228 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - model saved
+2021-05-03 22:57:28,228 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:test
+2021-05-03 22:57:34,750 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14554 tokens with 830 phrases; found: 858 phrases; correct: 756.
+
+2021-05-03 22:57:34,750 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  98.82%; precision:  88.11%; recall:  91.08%; FB1:  89.57
+
+2021-05-03 22:57:34,751 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  32
+
+2021-05-03 22:57:34,751 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  97.30%; recall:  97.83%; FB1:  97.56  185
+
+2021-05-03 22:57:34,751 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  85.22%; recall:  90.74%; FB1:  87.89  115
+
+2021-05-03 22:57:34,751 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  93.36%; recall:  98.68%; FB1:  95.95  241
+
+2021-05-03 22:57:34,752 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  87.16%; recall:  88.79%; FB1:  87.96  109
+
+2021-05-03 22:57:34,752 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  89.77%; recall:  92.94%; FB1:  91.33  176
+
+2021-05-03 22:57:34,981 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - new best test f1 score:89.570
+2021-05-03 22:57:52,238 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:dev
+2021-05-03 22:57:58,803 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14602 tokens with 835 phrases; found: 856 phrases; correct: 764.
+
+2021-05-03 22:57:58,804 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  99.03%; precision:  89.25%; recall:  91.50%; FB1:  90.36
+
+2021-05-03 22:57:58,804 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  33
+
+2021-05-03 22:57:58,804 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  97.83%; recall:  97.83%; FB1:  97.83  184
+
+2021-05-03 22:57:58,804 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  84.55%; recall:  93.69%; FB1:  88.89  123
+
+2021-05-03 22:57:58,804 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  97.40%; recall:  98.68%; FB1:  98.04  231
+
+2021-05-03 22:57:58,805 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  92.23%; recall:  87.16%; FB1:  89.62  103
+
+2021-05-03 22:57:58,805 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  87.91%; recall:  94.12%; FB1:  90.91  182
+
+2021-05-03 22:57:59,026 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - new best dev f1 score:90.360
+2021-05-03 22:57:59,645 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - model saved
+2021-05-03 22:57:59,646 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:test
+2021-05-03 22:58:06,229 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14554 tokens with 830 phrases; found: 851 phrases; correct: 759.
+
+2021-05-03 22:58:06,230 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  99.03%; precision:  89.19%; recall:  91.45%; FB1:  90.30
+
+2021-05-03 22:58:06,230 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  33
+
+2021-05-03 22:58:06,230 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  97.83%; recall:  97.83%; FB1:  97.83  184
+
+2021-05-03 22:58:06,230 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  84.17%; recall:  93.52%; FB1:  88.60  120
+
+2021-05-03 22:58:06,230 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  97.40%; recall:  98.68%; FB1:  98.04  231
+
+2021-05-03 22:58:06,231 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  92.08%; recall:  86.92%; FB1:  89.42  101
+
+2021-05-03 22:58:06,231 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  87.91%; recall:  94.12%; FB1:  90.91  182
+
+2021-05-03 22:58:06,454 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - new best test f1 score:90.300
+2021-05-03 22:58:23,546 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:dev
+2021-05-03 22:58:30,138 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14602 tokens with 835 phrases; found: 893 phrases; correct: 760.
+
+2021-05-03 22:58:30,139 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  98.35%; precision:  85.11%; recall:  91.02%; FB1:  87.96
+
+2021-05-03 22:58:30,139 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  34
+
+2021-05-03 22:58:30,139 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  98.37%; recall:  98.37%; FB1:  98.37  184
+
+2021-05-03 22:58:30,139 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  77.94%; recall:  95.50%; FB1:  85.83  136
+
+2021-05-03 22:58:30,140 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  92.56%; recall:  98.25%; FB1:  95.32  242
+
+2021-05-03 22:58:30,140 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  91.26%; recall:  86.24%; FB1:  88.68  103
+
+2021-05-03 22:58:30,140 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  79.90%; recall:  91.18%; FB1:  85.16  194
+
+2021-05-03 22:58:30,141 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:test
+2021-05-03 22:58:36,688 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14554 tokens with 830 phrases; found: 888 phrases; correct: 755.
+
+2021-05-03 22:58:36,688 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  98.34%; precision:  85.02%; recall:  90.96%; FB1:  87.89
+
+2021-05-03 22:58:36,688 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  34
+
+2021-05-03 22:58:36,689 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  98.37%; recall:  98.37%; FB1:  98.37  184
+
+2021-05-03 22:58:36,689 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  77.44%; recall:  95.37%; FB1:  85.48  133
+
+2021-05-03 22:58:36,689 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  92.56%; recall:  98.25%; FB1:  95.32  242
+
+2021-05-03 22:58:36,689 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  91.09%; recall:  85.98%; FB1:  88.46  101
+
+2021-05-03 22:58:36,689 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  79.90%; recall:  91.18%; FB1:  85.16  194
+
+2021-05-03 22:58:53,699 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:dev
+2021-05-03 22:59:00,248 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14602 tokens with 835 phrases; found: 900 phrases; correct: 755.
+
+2021-05-03 22:59:00,249 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  98.06%; precision:  83.89%; recall:  90.42%; FB1:  87.03
+
+2021-05-03 22:59:00,249 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  34
+
+2021-05-03 22:59:00,249 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  97.84%; recall:  98.37%; FB1:  98.10  185
+
+2021-05-03 22:59:00,249 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  72.34%; recall:  91.89%; FB1:  80.95  141
+
+2021-05-03 22:59:00,250 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  88.66%; recall:  96.05%; FB1:  92.21  247
+
+2021-05-03 22:59:00,250 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  88.99%; recall:  88.99%; FB1:  88.99  109
+
+2021-05-03 22:59:00,250 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  84.78%; recall:  91.76%; FB1:  88.14  184
+
+2021-05-03 22:59:00,251 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:test
+2021-05-03 22:59:06,773 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14554 tokens with 830 phrases; found: 894 phrases; correct: 751.
+
+2021-05-03 22:59:06,773 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  98.09%; precision:  84.00%; recall:  90.48%; FB1:  87.12
+
+2021-05-03 22:59:06,773 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  34
+
+2021-05-03 22:59:06,773 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  97.84%; recall:  98.37%; FB1:  98.10  185
+
+2021-05-03 22:59:06,774 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  72.46%; recall:  92.59%; FB1:  81.30  138
+
+2021-05-03 22:59:06,774 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  88.66%; recall:  96.05%; FB1:  92.21  247
+
+2021-05-03 22:59:06,774 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  89.62%; recall:  88.79%; FB1:  89.20  106
+
+2021-05-03 22:59:06,774 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  84.78%; recall:  91.76%; FB1:  88.14  184
+
+2021-05-03 22:59:15,238 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - iteration:38,step:12/24,loss:3.5660
+2021-05-03 22:59:23,964 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:dev
+2021-05-03 22:59:30,488 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14602 tokens with 835 phrases; found: 859 phrases; correct: 762.
+
+2021-05-03 22:59:30,488 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  99.02%; precision:  88.71%; recall:  91.26%; FB1:  89.96
+
+2021-05-03 22:59:30,488 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  34
+
+2021-05-03 22:59:30,488 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  97.30%; recall:  97.83%; FB1:  97.56  185
+
+2021-05-03 22:59:30,489 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  87.93%; recall:  91.89%; FB1:  89.87  116
+
+2021-05-03 22:59:30,489 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  96.14%; recall:  98.25%; FB1:  97.18  233
+
+2021-05-03 22:59:30,489 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  92.59%; recall:  91.74%; FB1:  92.17  108
+
+2021-05-03 22:59:30,489 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  85.25%; recall:  91.76%; FB1:  88.39  183
+
+2021-05-03 22:59:30,490 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:test
+2021-05-03 22:59:37,031 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14554 tokens with 830 phrases; found: 854 phrases; correct: 757.
+
+2021-05-03 22:59:37,031 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  99.02%; precision:  88.64%; recall:  91.20%; FB1:  89.90
+
+2021-05-03 22:59:37,031 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  34
+
+2021-05-03 22:59:37,031 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  97.30%; recall:  97.83%; FB1:  97.56  185
+
+2021-05-03 22:59:37,032 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  87.61%; recall:  91.67%; FB1:  89.59  113
+
+2021-05-03 22:59:37,032 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  96.14%; recall:  98.25%; FB1:  97.18  233
+
+2021-05-03 22:59:37,032 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  92.45%; recall:  91.59%; FB1:  92.02  106
+
+2021-05-03 22:59:37,032 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  85.25%; recall:  91.76%; FB1:  88.39  183
+
+2021-05-03 22:59:54,277 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:dev
+2021-05-03 23:00:00,803 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14602 tokens with 835 phrases; found: 864 phrases; correct: 764.
+
+2021-05-03 23:00:00,803 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  98.90%; precision:  88.43%; recall:  91.50%; FB1:  89.94
+
+2021-05-03 23:00:00,804 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  33
+
+2021-05-03 23:00:00,804 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  97.85%; recall:  98.91%; FB1:  98.38  186
+
+2021-05-03 23:00:00,804 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  84.68%; recall:  94.59%; FB1:  89.36  124
+
+2021-05-03 23:00:00,804 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  92.15%; recall:  97.81%; FB1:  94.89  242
+
+2021-05-03 23:00:00,804 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  93.27%; recall:  88.99%; FB1:  91.08  104
+
+2021-05-03 23:00:00,804 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  89.71%; recall:  92.35%; FB1:  91.01  175
+
+2021-05-03 23:00:00,806 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:test
+2021-05-03 23:00:07,396 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14554 tokens with 830 phrases; found: 859 phrases; correct: 759.
+
+2021-05-03 23:00:07,397 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  98.90%; precision:  88.36%; recall:  91.45%; FB1:  89.88
+
+2021-05-03 23:00:07,397 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  33
+
+2021-05-03 23:00:07,398 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  97.85%; recall:  98.91%; FB1:  98.38  186
+
+2021-05-03 23:00:07,398 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  84.30%; recall:  94.44%; FB1:  89.08  121
+
+2021-05-03 23:00:07,398 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  92.15%; recall:  97.81%; FB1:  94.89  242
+
+2021-05-03 23:00:07,398 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  93.14%; recall:  88.79%; FB1:  90.91  102
+
+2021-05-03 23:00:07,399 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  89.71%; recall:  92.35%; FB1:  91.01  175
+
+2021-05-03 23:00:24,442 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:dev
+2021-05-03 23:00:31,004 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14602 tokens with 835 phrases; found: 867 phrases; correct: 765.
+
+2021-05-03 23:00:31,005 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  98.95%; precision:  88.24%; recall:  91.62%; FB1:  89.89
+
+2021-05-03 23:00:31,005 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  33
+
+2021-05-03 23:00:31,005 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  98.38%; recall:  98.91%; FB1:  98.64  185
+
+2021-05-03 23:00:31,005 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  87.39%; recall:  93.69%; FB1:  90.43  119
+
+2021-05-03 23:00:31,005 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  92.12%; recall:  97.37%; FB1:  94.67  241
+
+2021-05-03 23:00:31,005 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  90.91%; recall:  91.74%; FB1:  91.32  110
+
+2021-05-03 23:00:31,006 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  87.71%; recall:  92.35%; FB1:  89.97  179
+
+2021-05-03 23:00:31,007 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:test
+2021-05-03 23:00:37,604 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14554 tokens with 830 phrases; found: 862 phrases; correct: 761.
+
+2021-05-03 23:00:37,604 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  98.96%; precision:  88.28%; recall:  91.69%; FB1:  89.95
+
+2021-05-03 23:00:37,605 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  33
+
+2021-05-03 23:00:37,605 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  98.38%; recall:  98.91%; FB1:  98.64  185
+
+2021-05-03 23:00:37,605 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  87.18%; recall:  94.44%; FB1:  90.67  117
+
+2021-05-03 23:00:37,605 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  92.12%; recall:  97.37%; FB1:  94.67  241
+
+2021-05-03 23:00:37,605 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  91.59%; recall:  91.59%; FB1:  91.59  107
+
+2021-05-03 23:00:37,606 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  87.71%; recall:  92.35%; FB1:  89.97  179
+
+2021-05-03 23:00:54,615 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:dev
+2021-05-03 23:01:01,128 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14602 tokens with 835 phrases; found: 845 phrases; correct: 768.
+
+2021-05-03 23:01:01,128 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  99.23%; precision:  90.89%; recall:  91.98%; FB1:  91.43
+
+2021-05-03 23:01:01,128 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  32
+
+2021-05-03 23:01:01,129 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  98.38%; recall:  98.91%; FB1:  98.64  185
+
+2021-05-03 23:01:01,129 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  93.64%; recall:  92.79%; FB1:  93.21  110
+
+2021-05-03 23:01:01,129 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  95.30%; recall:  97.81%; FB1:  96.54  234
+
+2021-05-03 23:01:01,129 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  91.74%; recall:  91.74%; FB1:  91.74  109
+
+2021-05-03 23:01:01,129 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  91.43%; recall:  94.12%; FB1:  92.75  175
+
+2021-05-03 23:01:01,359 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - new best dev f1 score:91.430
+2021-05-03 23:01:01,980 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - model saved
+2021-05-03 23:01:01,981 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:test
+2021-05-03 23:01:08,698 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14554 tokens with 830 phrases; found: 840 phrases; correct: 764.
+
+2021-05-03 23:01:08,699 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  99.25%; precision:  90.95%; recall:  92.05%; FB1:  91.50
+
+2021-05-03 23:01:08,699 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  32
+
+2021-05-03 23:01:08,699 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  98.38%; recall:  98.91%; FB1:  98.64  185
+
+2021-05-03 23:01:08,699 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  93.52%; recall:  93.52%; FB1:  93.52  108
+
+2021-05-03 23:01:08,700 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  95.30%; recall:  97.81%; FB1:  96.54  234
+
+2021-05-03 23:01:08,700 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  92.45%; recall:  91.59%; FB1:  92.02  106
+
+2021-05-03 23:01:08,700 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  91.43%; recall:  94.12%; FB1:  92.75  175
+
+2021-05-03 23:01:08,921 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - new best test f1 score:91.500
+2021-05-03 23:01:20,414 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - iteration:42,step:16/24,loss:3.2712
+2021-05-03 23:01:25,970 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:dev
+2021-05-03 23:01:32,478 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14602 tokens with 835 phrases; found: 857 phrases; correct: 768.
+
+2021-05-03 23:01:32,478 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  99.10%; precision:  89.61%; recall:  91.98%; FB1:  90.78
+
+2021-05-03 23:01:32,479 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  33
+
+2021-05-03 23:01:32,479 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  97.85%; recall:  98.91%; FB1:  98.38  186
+
+2021-05-03 23:01:32,479 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  89.57%; recall:  92.79%; FB1:  91.15  115
+
+2021-05-03 23:01:32,479 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  93.67%; recall:  97.37%; FB1:  95.48  237
+
+2021-05-03 23:01:32,479 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  91.89%; recall:  93.58%; FB1:  92.73  111
+
+2021-05-03 23:01:32,479 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  90.86%; recall:  93.53%; FB1:  92.17  175
+
+2021-05-03 23:01:32,481 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:test
+2021-05-03 23:01:39,049 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14554 tokens with 830 phrases; found: 852 phrases; correct: 764.
+
+2021-05-03 23:01:39,049 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  99.11%; precision:  89.67%; recall:  92.05%; FB1:  90.84
+
+2021-05-03 23:01:39,049 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  33
+
+2021-05-03 23:01:39,050 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  97.85%; recall:  98.91%; FB1:  98.38  186
+
+2021-05-03 23:01:39,050 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  89.38%; recall:  93.52%; FB1:  91.40  113
+
+2021-05-03 23:01:39,050 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  93.67%; recall:  97.37%; FB1:  95.48  237
+
+2021-05-03 23:01:39,050 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  92.59%; recall:  93.46%; FB1:  93.02  108
+
+2021-05-03 23:01:39,050 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  90.86%; recall:  93.53%; FB1:  92.17  175
+
+2021-05-03 23:01:56,008 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:dev
+2021-05-03 23:02:02,527 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14602 tokens with 835 phrases; found: 860 phrases; correct: 768.
+
+2021-05-03 23:02:02,528 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  98.96%; precision:  89.30%; recall:  91.98%; FB1:  90.62
+
+2021-05-03 23:02:02,528 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  33
+
+2021-05-03 23:02:02,528 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  97.30%; recall:  97.83%; FB1:  97.56  185
+
+2021-05-03 23:02:02,528 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  92.73%; recall:  91.89%; FB1:  92.31  110
+
+2021-05-03 23:02:02,529 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  94.49%; recall:  97.81%; FB1:  96.12  236
+
+2021-05-03 23:02:02,529 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  91.74%; recall:  91.74%; FB1:  91.74  109
+
+2021-05-03 23:02:02,529 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  87.17%; recall:  95.88%; FB1:  91.32  187
+
+2021-05-03 23:02:02,530 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:test
+2021-05-03 23:02:09,093 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14554 tokens with 830 phrases; found: 855 phrases; correct: 764.
+
+2021-05-03 23:02:09,094 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  98.98%; precision:  89.36%; recall:  92.05%; FB1:  90.68
+
+2021-05-03 23:02:09,094 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  33
+
+2021-05-03 23:02:09,094 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  97.30%; recall:  97.83%; FB1:  97.56  185
+
+2021-05-03 23:02:09,094 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  92.59%; recall:  92.59%; FB1:  92.59  108
+
+2021-05-03 23:02:09,094 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  94.49%; recall:  97.81%; FB1:  96.12  236
+
+2021-05-03 23:02:09,095 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  92.45%; recall:  91.59%; FB1:  92.02  106
+
+2021-05-03 23:02:09,095 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  87.17%; recall:  95.88%; FB1:  91.32  187
+
+2021-05-03 23:02:26,098 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:dev
+2021-05-03 23:02:32,634 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14602 tokens with 835 phrases; found: 908 phrases; correct: 762.
+
+2021-05-03 23:02:32,635 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  98.08%; precision:  83.92%; recall:  91.26%; FB1:  87.44
+
+2021-05-03 23:02:32,635 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  35
+
+2021-05-03 23:02:32,635 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  97.85%; recall:  98.91%; FB1:  98.38  186
+
+2021-05-03 23:02:32,636 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  81.40%; recall:  94.59%; FB1:  87.50  129
+
+2021-05-03 23:02:32,636 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  89.52%; recall:  97.37%; FB1:  93.28  248
+
+2021-05-03 23:02:32,636 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  91.43%; recall:  88.07%; FB1:  89.72  105
+
+2021-05-03 23:02:32,636 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  76.59%; recall:  92.35%; FB1:  83.73  205
+
+2021-05-03 23:02:32,637 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:test
+2021-05-03 23:02:39,160 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14554 tokens with 830 phrases; found: 903 phrases; correct: 758.
+
+2021-05-03 23:02:39,160 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  98.12%; precision:  83.94%; recall:  91.33%; FB1:  87.48
+
+2021-05-03 23:02:39,161 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  35
+
+2021-05-03 23:02:39,161 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  97.85%; recall:  98.91%; FB1:  98.38  186
+
+2021-05-03 23:02:39,161 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  81.60%; recall:  94.44%; FB1:  87.55  125
+
+2021-05-03 23:02:39,161 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  89.52%; recall:  97.37%; FB1:  93.28  248
+
+2021-05-03 23:02:39,161 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  91.35%; recall:  88.79%; FB1:  90.05  104
+
+2021-05-03 23:02:39,161 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  76.59%; recall:  92.35%; FB1:  83.73  205
+
+2021-05-03 23:02:56,068 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:dev
+2021-05-03 23:03:02,614 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14602 tokens with 835 phrases; found: 879 phrases; correct: 774.
+
+2021-05-03 23:03:02,614 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  98.66%; precision:  88.05%; recall:  92.69%; FB1:  90.32
+
+2021-05-03 23:03:02,614 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  33
+
+2021-05-03 23:03:02,614 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  98.91%; recall:  98.91%; FB1:  98.91  184
+
+2021-05-03 23:03:02,614 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  83.46%; recall:  95.50%; FB1:  89.08  127
+
+2021-05-03 23:03:02,615 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  92.92%; recall:  97.81%; FB1:  95.30  240
+
+2021-05-03 23:03:02,615 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  95.28%; recall:  92.66%; FB1:  93.95  106
+
+2021-05-03 23:03:02,615 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  85.71%; recall:  95.29%; FB1:  90.25  189
+
+2021-05-03 23:03:02,616 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:test
+2021-05-03 23:03:09,171 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14554 tokens with 830 phrases; found: 874 phrases; correct: 769.
+
+2021-05-03 23:03:09,171 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  98.66%; precision:  87.99%; recall:  92.65%; FB1:  90.26
+
+2021-05-03 23:03:09,171 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  33
+
+2021-05-03 23:03:09,172 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  98.91%; recall:  98.91%; FB1:  98.91  184
+
+2021-05-03 23:03:09,172 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  83.06%; recall:  95.37%; FB1:  88.79  124
+
+2021-05-03 23:03:09,172 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  92.92%; recall:  97.81%; FB1:  95.30  240
+
+2021-05-03 23:03:09,172 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  95.19%; recall:  92.52%; FB1:  93.84  104
+
+2021-05-03 23:03:09,172 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  85.71%; recall:  95.29%; FB1:  90.25  189
+
+2021-05-03 23:03:23,463 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - iteration:46,step:20/24,loss:2.8193
+2021-05-03 23:03:26,234 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:dev
+2021-05-03 23:03:32,752 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14602 tokens with 835 phrases; found: 871 phrases; correct: 772.
+
+2021-05-03 23:03:32,752 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  98.83%; precision:  88.63%; recall:  92.46%; FB1:  90.50
+
+2021-05-03 23:03:32,753 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  34
+
+2021-05-03 23:03:32,753 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  99.46%; recall:  99.46%; FB1:  99.46  184
+
+2021-05-03 23:03:32,753 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  83.59%; recall:  96.40%; FB1:  89.54  128
+
+2021-05-03 23:03:32,753 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  94.87%; recall:  97.37%; FB1:  96.10  234
+
+2021-05-03 23:03:32,753 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  97.06%; recall:  90.83%; FB1:  93.84  102
+
+2021-05-03 23:03:32,754 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  85.19%; recall:  94.71%; FB1:  89.69  189
+
+2021-05-03 23:03:32,755 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:test
+2021-05-03 23:03:39,372 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14554 tokens with 830 phrases; found: 866 phrases; correct: 768.
+
+2021-05-03 23:03:39,372 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  98.87%; precision:  88.68%; recall:  92.53%; FB1:  90.57
+
+2021-05-03 23:03:39,372 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  34
+
+2021-05-03 23:03:39,372 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  99.46%; recall:  99.46%; FB1:  99.46  184
+
+2021-05-03 23:03:39,373 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  83.87%; recall:  96.30%; FB1:  89.66  124
+
+2021-05-03 23:03:39,373 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  94.87%; recall:  97.37%; FB1:  96.10  234
+
+2021-05-03 23:03:39,373 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  97.03%; recall:  91.59%; FB1:  94.23  101
+
+2021-05-03 23:03:39,373 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  85.19%; recall:  94.71%; FB1:  89.69  189
+
+2021-05-03 23:03:56,376 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:dev
+2021-05-03 23:04:02,929 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14602 tokens with 835 phrases; found: 860 phrases; correct: 780.
+
+2021-05-03 23:04:02,930 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  99.26%; precision:  90.70%; recall:  93.41%; FB1:  92.04
+
+2021-05-03 23:04:02,930 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  33
+
+2021-05-03 23:04:02,930 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  98.38%; recall:  98.91%; FB1:  98.64  185
+
+2021-05-03 23:04:02,930 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  87.70%; recall:  96.40%; FB1:  91.85  122
+
+2021-05-03 23:04:02,930 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  97.83%; recall:  98.68%; FB1:  98.25  230
+
+2021-05-03 23:04:02,931 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  93.52%; recall:  92.66%; FB1:  93.09  108
+
+2021-05-03 23:04:02,931 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  90.66%; recall:  97.06%; FB1:  93.75  182
+
+2021-05-03 23:04:03,153 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - new best dev f1 score:92.040
+2021-05-03 23:04:03,774 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - model saved
+2021-05-03 23:04:03,774 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:test
+2021-05-03 23:04:10,475 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14554 tokens with 830 phrases; found: 855 phrases; correct: 775.
+
+2021-05-03 23:04:10,476 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  99.26%; precision:  90.64%; recall:  93.37%; FB1:  91.99
+
+2021-05-03 23:04:10,476 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  33
+
+2021-05-03 23:04:10,476 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  98.38%; recall:  98.91%; FB1:  98.64  185
+
+2021-05-03 23:04:10,476 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  87.39%; recall:  96.30%; FB1:  91.63  119
+
+2021-05-03 23:04:10,477 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  97.83%; recall:  98.68%; FB1:  98.25  230
+
+2021-05-03 23:04:10,477 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  93.40%; recall:  92.52%; FB1:  92.96  106
+
+2021-05-03 23:04:10,477 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  90.66%; recall:  97.06%; FB1:  93.75  182
+
+2021-05-03 23:04:10,716 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - new best test f1 score:91.990
+2021-05-03 23:04:27,658 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:dev
+2021-05-03 23:04:34,164 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14602 tokens with 835 phrases; found: 848 phrases; correct: 785.
+
+2021-05-03 23:04:34,165 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  99.55%; precision:  92.57%; recall:  94.01%; FB1:  93.29
+
+2021-05-03 23:04:34,165 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  33
+
+2021-05-03 23:04:34,165 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  98.92%; recall:  99.46%; FB1:  99.19  185
+
+2021-05-03 23:04:34,165 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  95.58%; recall:  97.30%; FB1:  96.43  113
+
+2021-05-03 23:04:34,165 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  97.83%; recall:  98.68%; FB1:  98.25  230
+
+2021-05-03 23:04:34,166 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  95.37%; recall:  94.50%; FB1:  94.93  108
+
+2021-05-03 23:04:34,166 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  92.74%; recall:  97.65%; FB1:  95.13  179
+
+2021-05-03 23:04:34,388 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - new best dev f1 score:93.290
+2021-05-03 23:04:35,013 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - model saved
+2021-05-03 23:04:35,014 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:test
+2021-05-03 23:04:41,525 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14554 tokens with 830 phrases; found: 843 phrases; correct: 780.
+
+2021-05-03 23:04:41,526 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  99.55%; precision:  92.53%; recall:  93.98%; FB1:  93.25
+
+2021-05-03 23:04:41,526 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  33
+
+2021-05-03 23:04:41,526 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  98.92%; recall:  99.46%; FB1:  99.19  185
+
+2021-05-03 23:04:41,526 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  95.45%; recall:  97.22%; FB1:  96.33  110
+
+2021-05-03 23:04:41,526 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  97.83%; recall:  98.68%; FB1:  98.25  230
+
+2021-05-03 23:04:41,527 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  95.28%; recall:  94.39%; FB1:  94.84  106
+
+2021-05-03 23:04:41,527 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  92.74%; recall:  97.65%; FB1:  95.13  179
+
+2021-05-03 23:04:41,747 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - new best test f1 score:93.250
+2021-05-03 23:04:58,730 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:dev
+2021-05-03 23:05:05,269 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14602 tokens with 835 phrases; found: 840 phrases; correct: 781.
+
+2021-05-03 23:05:05,269 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  99.47%; precision:  92.98%; recall:  93.53%; FB1:  93.25
+
+2021-05-03 23:05:05,269 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  33
+
+2021-05-03 23:05:05,269 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  98.91%; recall:  98.91%; FB1:  98.91  184
+
+2021-05-03 23:05:05,270 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  87.80%; recall:  97.30%; FB1:  92.31  123
+
+2021-05-03 23:05:05,270 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  98.70%; recall: 100.00%; FB1:  99.35  231
+
+2021-05-03 23:05:05,270 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  96.15%; recall:  91.74%; FB1:  93.90  104
+
+2021-05-03 23:05:05,270 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  98.79%; recall:  95.88%; FB1:  97.31  165
+
+2021-05-03 23:05:05,271 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:test
+2021-05-03 23:05:11,818 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14554 tokens with 830 phrases; found: 835 phrases; correct: 777.
+
+2021-05-03 23:05:11,818 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  99.52%; precision:  93.05%; recall:  93.61%; FB1:  93.33
+
+2021-05-03 23:05:11,819 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  33
+
+2021-05-03 23:05:11,819 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  98.91%; recall:  98.91%; FB1:  98.91  184
+
+2021-05-03 23:05:11,819 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  88.24%; recall:  97.22%; FB1:  92.51  119
+
+2021-05-03 23:05:11,819 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  98.70%; recall: 100.00%; FB1:  99.35  231
+
+2021-05-03 23:05:11,819 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  96.12%; recall:  92.52%; FB1:  94.29  103
+
+2021-05-03 23:05:11,819 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  98.79%; recall:  95.88%; FB1:  97.31  165
+
+2021-05-03 23:05:12,048 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - new best test f1 score:93.330
+2021-05-03 23:05:29,002 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - iteration:51,step:0/24,loss:2.4131
+2021-05-03 23:05:29,002 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:dev
+2021-05-03 23:05:35,534 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14602 tokens with 835 phrases; found: 855 phrases; correct: 781.
+
+2021-05-03 23:05:35,534 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  99.21%; precision:  91.35%; recall:  93.53%; FB1:  92.43
+
+2021-05-03 23:05:35,535 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  33
+
+2021-05-03 23:05:35,535 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  99.46%; recall:  99.46%; FB1:  99.46  184
+
+2021-05-03 23:05:35,535 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  87.70%; recall:  96.40%; FB1:  91.85  122
+
+2021-05-03 23:05:35,535 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  97.84%; recall:  99.56%; FB1:  98.70  232
+
+2021-05-03 23:05:35,535 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  96.19%; recall:  92.66%; FB1:  94.39  105
+
+2021-05-03 23:05:35,536 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  91.06%; recall:  95.88%; FB1:  93.41  179
+
+2021-05-03 23:05:35,537 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - evaluate:test
+2021-05-03 23:05:42,068 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - processed 14554 tokens with 830 phrases; found: 850 phrases; correct: 777.
+
+2021-05-03 23:05:42,068 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - accuracy:  99.25%; precision:  91.41%; recall:  93.61%; FB1:  92.50
+
+2021-05-03 23:05:42,068 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  33
+
+2021-05-03 23:05:42,069 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -             COVID: precision:  99.46%; recall:  99.46%; FB1:  99.46  184
+
+2021-05-03 23:05:42,069 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           DISEASE: precision:  88.14%; recall:  96.30%; FB1:  92.04  118
+
+2021-05-03 23:05:42,069 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              GENE: precision:  97.84%; recall:  99.56%; FB1:  98.70  232
+
+2021-05-03 23:05:42,069 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -              PHEN: precision:  96.15%; recall:  93.46%; FB1:  94.79  104
+
+2021-05-03 23:05:42,069 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO -           PROTEIN: precision:  91.06%; recall:  95.88%; FB1:  93.41  179
+
+2021-05-03 23:07:33,620 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - Reading model parameters from /Users/yucheng/Applications/python/bs_ui/ner/ckpt/ner.ckpt-1152
+2021-05-03 23:21:53,307 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - Reading model parameters from /Users/yucheng/Applications/python/bs_ui/ner/ckpt/ner.ckpt-1152
+2021-05-03 23:24:13,287 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - Reading model parameters from /Users/yucheng/Applications/python/bs_ui/ner/ckpt/ner.ckpt-1152
+2021-05-03 23:25:05,689 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - Reading model parameters from /Users/yucheng/Applications/python/bs_ui/ner/ckpt/ner.ckpt-1152
