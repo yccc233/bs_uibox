@@ -65,6 +65,7 @@ class MainWindow(QtWidgets.QMainWindow):
         path = fileDialog.getOpenFileName(dir='/Users/yucheng', filter='(*.txt)')
         with open(path[0], 'r') as f:
             str = f.read()
+        str.replace('-', '_')
         self.textEdit.setPlainText(str)
         self.label.setText('导入文件 {}'.format(path[0]))
 
@@ -73,21 +74,21 @@ class MainWindow(QtWidgets.QMainWindow):
         text = self.textEdit.toPlainText()
         sentences = util.split_text_to_sentences(text)
         sentences = util.clean_sentences(sentences)
-        hl = []
+        entities = []
         for sentence in sentences:
             predict = entity.predict(sentence)  # 获取实体
             print('predict:{}'.format(predict))
             # 获取高亮相关实体
             self.covid, self.gene, self.phen, self.protein = util.classify_kind_to_list(predict)
-            hl += util.handle_list_to_highlight(self.covid, self.gene, self.phen, self.protein)
-            hl = util.clean_entities_from_predict(hl)
+            entities += util.handle_list_to_highlight(self.covid, self.gene, self.phen, self.protein)
+            entities = util.clean_entities_from_predict(entities)
             # 获取二元组
             sentence_double = util.getDouble_by_sentence(predict)
             for sd in sentence_double:  # 去重
                 if sd not in self.doubles:
                     self.doubles.append(sd)
-        print('highlight:{}'.format(hl))
-        self.highLighter.setHighLightData(hl)
+        print('highlight:{}'.format(entities))
+        self.highLighter.setHighLightData(entities)
         self.highLighter.highlightBlock(self.textEdit.toPlainText())
         self.textEdit.setText(self.textEdit.toPlainText())
         self.label.setText('分析完成！')
@@ -114,6 +115,6 @@ if __name__ == '__main__':
     mainWin = MainWindow()
     mainWin.show()
     # 预先初始化实体抽取模型
-    # entity.predict('世界卫生组织命名为"2019冠状病毒病"，是指2019新型冠状病毒感染导致的肺炎。')
-    # mainWin.label.setText('初始化完成，欢迎使用！')
+    entity.predict('世界卫生组织命名为"2019冠状病毒病"，是指2019新型冠状病毒感染导致的肺炎。')
+    mainWin.label.setText('初始化完成，欢迎使用！')
     sys.exit(app.exec_())

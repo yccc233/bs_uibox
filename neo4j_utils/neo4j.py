@@ -3,8 +3,11 @@ from py2neo import *
 
 class Neo4j:
     def __init__(self):
-        self.graph = Graph("http://localhost:7474", auth=("neo4j", "1111"))
-        self.matcher = NodeMatcher(self.graph)
+        try:
+            self.graph = Graph("http://localhost:7474", auth=("neo4j", "1111"))
+            self.matcher = NodeMatcher(self.graph)
+        except:
+            print('请打开neo4j服务')
 
     def insertNeo4j(self, doubles):
         # 保存到neo4j，参数是一个二维的列表
