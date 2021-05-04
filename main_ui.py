@@ -36,7 +36,7 @@ class MainWindow(QtWidgets.QMainWindow):
         # 文本框：显示文本信息
         self.textEdit = QtWidgets.QTextEdit()
         self.textEdit.setWindowOpacity(0.1)
-        self.textEdit.setPlaceholderText('//请输入文本')
+        self.textEdit.setPlaceholderText('//请导入文本')
 
         # 布局
         # 横向布局，保存分析、三元组、图谱按钮
@@ -66,6 +66,7 @@ class MainWindow(QtWidgets.QMainWindow):
         # with open(path[0], 'r') as f:
         #     str = f.read()
         self.textEdit.setPlainText(str)
+        # self.label.setText('导入文件 {}'.format(path))
 
     # 开始分析
     def click2(self):
@@ -87,12 +88,13 @@ class MainWindow(QtWidgets.QMainWindow):
         self.highLighter.setHighLightData(hl)
         self.highLighter.highlightBlock(self.textEdit.toPlainText())
         self.textEdit.setText(self.textEdit.toPlainText())
+        self.label.setText('分析完成！')
 
     # 保存信息
     def click3(self):
         neo = neo4j.Neo4j()
         if neo.insertNeo4j(self.doubles):
-            self.label.setText('保存成功')
+            self.label.setText('保存成功！')
         else:
             self.label.setText('请打开neo4j服务...')
 

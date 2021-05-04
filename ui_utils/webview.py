@@ -15,5 +15,4 @@ if __name__ == '__main__':
     wv = WebView(mainWin)
     mainWin.setFixedSize(800,700)
     wv.setFixedSize(mainWin.size())
-
     sys.exit(app.exec_())
