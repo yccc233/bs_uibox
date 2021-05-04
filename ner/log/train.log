@@ -1818,3 +1818,9 @@
 2021-05-04 18:16:54,134 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - Reading model parameters from /Users/yucheng/Applications/python/bs_ui/ner/ckpt/ner.ckpt-1200
 2021-05-04 18:23:22,181 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - Reading model parameters from /Users/yucheng/Applications/python/bs_ui/ner/ckpt/ner.ckpt-1200
 2021-05-04 18:28:04,462 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - Reading model parameters from /Users/yucheng/Applications/python/bs_ui/ner/ckpt/ner.ckpt-1200
+2021-05-04 18:31:28,101 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - Reading model parameters from /Users/yucheng/Applications/python/bs_ui/ner/ckpt/ner.ckpt-1200
+2021-05-04 18:33:49,758 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - Reading model parameters from /Users/yucheng/Applications/python/bs_ui/ner/ckpt/ner.ckpt-1200
+2021-05-04 18:34:15,619 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - Reading model parameters from /Users/yucheng/Applications/python/bs_ui/ner/ckpt/ner.ckpt-1200
+2021-05-04 18:35:25,913 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - Reading model parameters from /Users/yucheng/Applications/python/bs_ui/ner/ckpt/ner.ckpt-1200
+2021-05-04 18:36:49,825 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - Reading model parameters from /Users/yucheng/Applications/python/bs_ui/ner/ckpt/ner.ckpt-1200
+2021-05-04 18:39:01,602 - /Users/yucheng/Applications/python/bs_ui/ner/log/train.log - INFO - Reading model parameters from /Users/yucheng/Applications/python/bs_ui/ner/ckpt/ner.ckpt-1200

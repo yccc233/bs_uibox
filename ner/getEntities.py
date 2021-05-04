@@ -51,7 +51,7 @@ def outPutProcess(dataDict):
 
 
 def predict(text):
-    text = text.replace(' ', '-')
+    text = text.replace('-', '_')
     # 使用训练好的模型，对文本进行命名实体识别，结果会返回json格式的数据
     res = model.evaluate_line(sess, input_from_line(text, FLAGS.max_seq_len, tag_to_id), id_to_tag)
     return outPutProcess(res['data'])  # 输出的结果，再次进行过滤处理，辅助提高正确率

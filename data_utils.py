@@ -87,12 +87,13 @@ def clean_entities_from_predict(entitis):
     tar_entitis = []
     for entity in entitis:
         if entity not in tar_entitis and not re.search(r"[()（）%@&*$¥#!]", entity[1]):
+            entity[1] = entity[1].replace('_','-')
             tar_entitis.append(entity)
     return tar_entitis
 
 
 if __name__ == '__main__':
-    entities = [['COVID', '新型冠状病毒2019 nCOV'], ['PROTEIN', '受体基因血管紧张素转化酶2'], ['PROTEIN', 'Angi'], ['GENE', 'ACE2'], ['GENE', 'ACE2'], ['GENE', '能(Gene '], ['GENE', '%的AC'], ['PROTEIN', 'Caveolin蛋白'], ['PHEN', '阻断病毒感染'], ['COVID', '新冠'], ['GENE', '过与AC'], ['PHEN', '引起细胞'], ['PHEN', '性和肾功能'], ['COVID', '当对新冠'], ['PHEN', '发现肾功能']]
+    entities = [['COVID', '新型冠状病毒2019_nCOV'], ['PROTEIN', '受体基因血管紧张素转化酶2'], ['PROTEIN', 'Angi'], ['GENE', 'ACE2'], ['GENE', 'ACE2'], ['GENE', '能(Gene '], ['GENE', '%的AC'], ['PROTEIN', 'Caveolin蛋白'], ['PHEN', '阻断病毒感染'], ['COVID', '新冠'], ['GENE', '过与AC'], ['PHEN', '引起细胞'], ['PHEN', '性和肾功能'], ['COVID', '当对新冠'], ['PHEN', '发现肾功能']]
     print(entities)
     entities = clean_entities_from_predict(entities)
     print(entities)
