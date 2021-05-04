@@ -15,14 +15,14 @@ class MainWindow(QtWidgets.QMainWindow):
         self.mainWidget = QtWidgets.QWidget()
         self.setCentralWidget(self.mainWidget)
         # 主要布局器，纵向布局
-        self.mainlayout = QtWidgets.QVBoxLayout()
-        self.mainWidget.setLayout(self.mainlayout)
+        self.mainLayout = QtWidgets.QVBoxLayout()
+        self.mainWidget.setLayout(self.mainLayout)
         # 标签：存放提示、进度等
         self.label = QtWidgets.QLabel('程序构建中...')
         # 按钮1：打开文件
         self.button1 = QtWidgets.QPushButton(text='打开文件')
         self.button1.clicked.connect(self.click1)
-        self.mainlayout.addWidget(self.button1)
+        self.mainLayout.addWidget(self.button1)
         # 按钮2：分析文本
         self.button2 = QtWidgets.QPushButton(text='开始分析')
         self.button2.clicked.connect(self.click2)
@@ -32,7 +32,7 @@ class MainWindow(QtWidgets.QMainWindow):
         # 按钮4：打开h5页面
         self.button4 = QtWidgets.QPushButton(text='图谱页面')
         self.button4.clicked.connect(self.click4)
-        self.mainlayout.addWidget(self.button4)
+        self.mainLayout.addWidget(self.button4)
         # 文本框：显示文本信息
         self.textEdit = QtWidgets.QTextEdit()
         self.textEdit.setWindowOpacity(0.1)
@@ -44,10 +44,10 @@ class MainWindow(QtWidgets.QMainWindow):
         self.hbox.addWidget(self.button2)
         self.hbox.addWidget(self.button3)
         self.hbox.addWidget(self.button4)
-        self.mainlayout.addWidget(self.button1)
-        self.mainlayout.addLayout(self.hbox)
-        self.mainlayout.addWidget(self.label)
-        self.mainlayout.addWidget(self.textEdit)
+        self.mainLayout.addWidget(self.button1)
+        self.mainLayout.addLayout(self.hbox)
+        self.mainLayout.addWidget(self.label)
+        self.mainLayout.addWidget(self.textEdit)
         # 其他的初始化
         # 定义高亮方法
         self.highLighter = highlighter.MyHighlighter(self.textEdit)
@@ -60,31 +60,33 @@ class MainWindow(QtWidgets.QMainWindow):
 
     # 打开文件
     def click1(self):
-        str = '新冠中ACE2和受体基因血管紧张素转化酶2有关，且会导致发热现象。'
-        # fileDialog = QtWidgets.QFileDialog()
-        # path = fileDialog.getOpenFileName(dir='/Users/yucheng', filter='(*.txt)')
-        # with open(path[0], 'r') as f:
-        #     str = f.read()
+        # str = '新冠中ACE2和受体基因血管紧张素转化酶2有关，且会导致发热现象。'
+        fileDialog = QtWidgets.QFileDialog()
+        path = fileDialog.getOpenFileName(dir='/Users/yucheng', filter='(*.txt)')
+        with open(path[0], 'r') as f:
+            str = f.read()
         self.textEdit.setPlainText(str)
-        # self.label.setText('导入文件 {}'.format(path))
+        self.label.setText('导入文件 {}'.format(path[0]))
 
     # 开始分析
     def click2(self):
         text = self.textEdit.toPlainText()
         sentences = util.split_text_to_sentences(text)
-        for sen in sentences:  # 删除空元素
-            if not sen:
-                sentences.remove(sen)
+        sentences = util.clean_sentences(sentences)
         hl = []
         for sentence in sentences:
-            predict = entity.predict(sentence)
+            predict = entity.predict(sentence)  # 获取实体
+            print('predict:{}'.format(predict))
+            # 获取高亮相关实体
             self.covid, self.gene, self.phen, self.protein = util.classify_kind_to_list(predict)
-            hl = hl+util.handle_list_to_highlight(self.covid, self.gene, self.phen, self.protein)
+            hl += util.handle_list_to_highlight(self.covid, self.gene, self.phen, self.protein)
+            hl = util.clean_entities_from_predict(hl)
+            # 获取二元组
             sentence_double = util.getDouble_by_sentence(predict)
-            for sd in sentence_double:
+            for sd in sentence_double:  # 去重
                 if sd not in self.doubles:
                     self.doubles.append(sd)
-            print('predict:{}'.format(predict))
+        print('highlight:{}'.format(hl))
         self.highLighter.setHighLightData(hl)
         self.highLighter.highlightBlock(self.textEdit.toPlainText())
         self.textEdit.setText(self.textEdit.toPlainText())
@@ -112,6 +114,6 @@ if __name__ == '__main__':
     mainWin = MainWindow()
     mainWin.show()
     # 预先初始化实体抽取模型
-    entity.predict('世界卫生组织命名为"2019冠状病毒病"，是指2019新型冠状病毒感染导致的肺炎。')
-    mainWin.label.setText('初始化完成，欢迎使用！')
+    # entity.predict('世界卫生组织命名为"2019冠状病毒病"，是指2019新型冠状病毒感染导致的肺炎。')
+    # mainWin.label.setText('初始化完成，欢迎使用！')
     sys.exit(app.exec_())

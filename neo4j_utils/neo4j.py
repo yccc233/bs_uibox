@@ -1,5 +1,6 @@
 from py2neo import *
 
+
 class Neo4j:
     def __init__(self):
         self.graph = Graph("http://localhost:7474", auth=("neo4j", "1111"))
@@ -14,20 +15,20 @@ class Neo4j:
                 self.graph.create(covid)
             for dou in doubles:
                 # B结点建立
-                nodeb = self.matcher.match(dou[2], name=dou[3]).first()
-                if not nodeb:
-                    nodeb = Node(dou[2], name=dou[3])
+                nodeB = self.matcher.match(dou[2], name=dou[3]).first()
+                if not nodeB:
+                    nodeB = Node(dou[2], name=dou[3])
                 # A结点建立
                 if dou[0] == 'covid':
-                    rel = Relationship(covid, '有关', nodeb)
-                    s = covid | nodeb | rel
+                    rel = Relationship(covid, '有关', nodeB)
+                    s = covid | nodeB | rel
                     self.graph.create(s)
                 else:
-                    nodea = self.matcher.match(dou[0], name=dou[1]).first()
-                    if not nodea:
-                        nodea = Node(dou[0], name=dou[1])
-                    rel = Relationship(nodea, '有关', nodeb)
-                    s = nodea | nodeb | rel
+                    nodeA = self.matcher.match(dou[0], name=dou[1]).first()
+                    if not nodeA:
+                        nodeA = Node(dou[0], name=dou[1])
+                    rel = Relationship(nodeA, '有关', nodeB)
+                    s = nodeA | nodeB | rel
                     self.graph.create(s)
         except:
             return False
