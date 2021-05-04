@@ -79,6 +79,8 @@ def clean_sentences(sentences):
     for sen in sentences:  # 删除空元素
         if not sen:
             sentences.remove(sen)
+    for i in range(len(sentences)):
+        sentences[i] = sentences[i].strip()
     return sentences
 
 
