@@ -8,6 +8,16 @@ def split_text_to_sentences(text):
     return text.split('。')
 
 
+def split_text_to_paragraph(text):
+    text.replace('\t', '')
+    return text.split('\n')
+
+
+def split_paragraph_to_sentences(paragraph):
+    sentences = [p.strip()+'。' for p in paragraph.split('。') if p]
+    return sentences
+
+
 def classify_kind_to_list(predict):
     # 分类json格式的返回值，按照covid，gene，phen，protein顺序返回列表
     covid = gene = phen = protein = []
@@ -46,14 +56,14 @@ def getDouble_by_sentence(predict):
     PHEN = []
     # 获取基因型，gene和protein重复的即忽略
     if 'GENE' in predict:
-        GENE+=predict['GENE']
+        GENE += predict['GENE']
     elif 'PROTEIN' in predict:
-        GENE+=predict['PROTEIN']
+        GENE += predict['PROTEIN']
 
     if 'PHEN' in predict:
-        PHEN+=predict['PHEN']
+        PHEN += predict['PHEN']
     if 'DISEASE' in predict:
-        PHEN+=predict['DISEASE']
+        PHEN += predict['DISEASE']
 
     if 'COVID' in predict:  # 有新冠关键字
         if GENE:
@@ -62,15 +72,43 @@ def getDouble_by_sentence(predict):
         if PHEN:
             for phen in PHEN:
                 dou.append(['covid', 'COVID-19', 'phen', phen])
-        if GENE and PHEN:
+    if GENE and PHEN:
+        for gene in GENE:
+            for phen in PHEN:
+                dou.append(['gene', gene, 'phen', phen])
+    return dou
+
+
+def getDouble_by_sentence_and_isCovid(predict, isCovid):
+    # 通过一句话的分析获取两元组的关系，返回一个二维列表，具体index包括种类1，name1，种类2，name2
+    # 第一层是covid，第二层是gene，第三层是phen
+    # protein也属于第二层，disease属于第三层
+    # 与上一个方法不同的是这个是根据段落来判断与新冠的关系
+    dou = []
+    GENE = []
+    PHEN = []
+    # 获取基因型，gene和protein重复的即忽略
+    if 'GENE' in predict:
+        GENE += predict['GENE']
+    if 'PROTEIN' in predict:
+        GENE += predict['PROTEIN']
+
+    if 'PHEN' in predict:
+        PHEN += predict['PHEN']
+    if 'DISEASE' in predict:
+        PHEN += predict['DISEASE']
+
+    if isCovid:  # 有新冠有关（段落内）
+        if GENE:
             for gene in GENE:
-                for phen in PHEN:
-                    dou.append(['gene',gene,'phen',phen])
-    else:  # 无新冠关键字
-        if GENE and PHEN:
-            for gene in GENE:
-                for phen in PHEN:
-                    dou.append(['gene',gene,'phen',phen])
+                dou.append(['covid', 'COVID-19', 'gene', gene])
+        if PHEN:
+            for phen in PHEN:
+                dou.append(['covid', 'COVID-19', 'phen', phen])
+    if GENE and PHEN:
+        for gene in GENE:
+            for phen in PHEN:
+                dou.append(['gene', gene, 'phen', phen])
     return dou
 
 
@@ -95,9 +133,13 @@ def clean_entities_from_predict(entitis):
 
 
 if __name__ == '__main__':
-    entities = [['COVID', '新型冠状病毒2019_nCOV'], ['PROTEIN', '受体基因血管紧张素转化酶2'], ['PROTEIN', 'Angi'], ['GENE', 'ACE2'], ['GENE', 'ACE2'], ['GENE', '能(Gene '], ['GENE', '%的AC'], ['PROTEIN', 'Caveolin蛋白'], ['PHEN', '阻断病毒感染'], ['COVID', '新冠'], ['GENE', '过与AC'], ['PHEN', '引起细胞'], ['PHEN', '性和肾功能'], ['COVID', '当对新冠'], ['PHEN', '发现肾功能']]
-    print(entities)
-    entities = clean_entities_from_predict(entities)
-    print(entities)
+    # entities = [['COVID', '新型冠状病毒2019_nCOV'], ['PROTEIN', '受体基因血管紧张素转化酶2'], ['PROTEIN', 'Angi'], ['GENE', 'ACE2'], ['GENE', 'ACE2'], ['GENE', '能(Gene '], ['GENE', '%的AC'], ['PROTEIN', 'Caveolin蛋白'], ['PHEN', '阻断病毒感染'], ['COVID', '新冠'], ['GENE', '过与AC'], ['PHEN', '引起细胞'], ['PHEN', '性和肾功能'], ['COVID', '当对新冠'], ['PHEN', '发现肾功能']]
+    # print(entities)
+    # entities = clean_entities_from_predict(entities)
+    # print(entities)
+    #
+    # print(re.search(r"[()（）\%@&*$¥#!]", '%的AC'))
 
-    print(re.search(r"[()（）\%@&*$¥#!]", '%的AC'))
+    str = '新型冠状病毒感染的肺炎潜伏期一般为3~7d,多数不超过14d,但目前发现最长可达24天或许更长。以发热、乏力、干咳为主要表现，少数患者伴有鼻塞、流涕、腹泻等症状。重型病例多在一周后出现呼吸困难，严重者快速进展为急性呼吸窘迫综合征、脓毒症休克、难以纠正的代谢性酸中毒和出凝血功能障碍。'
+
+    print(split_paragraph_to_sentences(str))

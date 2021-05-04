@@ -71,27 +71,53 @@ class MainWindow(QtWidgets.QMainWindow):
 
     # 开始分析
     def click2(self):
+        self.doubles = []
         text = self.textEdit.toPlainText()
-        sentences = util.split_text_to_sentences(text)
-        sentences = util.clean_sentences(sentences)
+        paras = util.split_text_to_paragraph(text)
         entities = []
-        for sentence in sentences:
-            predict = entity.predict(sentence)  # 获取实体
-            print('predict:{}'.format(predict))
-            # 获取高亮相关实体
-            self.covid, self.gene, self.phen, self.protein = util.classify_kind_to_list(predict)
-            entities += util.handle_list_to_highlight(self.covid, self.gene, self.phen, self.protein)
-            entities = util.clean_entities_from_predict(entities)
-            # 获取二元组
-            sentence_double = util.getDouble_by_sentence(predict)
-            for sd in sentence_double:  # 去重
-                if sd not in self.doubles:
-                    self.doubles.append(sd)
-        print('highlight:{}'.format(entities))
-        self.highLighter.setHighLightData(entities)
-        self.highLighter.highlightBlock(self.textEdit.toPlainText())
-        self.textEdit.setText(self.textEdit.toPlainText())
-        self.label.setText('分析完成！')
+        for p in paras:  # 段落分割
+            sentences = util.split_paragraph_to_sentences(p)
+            sentences = util.clean_sentences(sentences)  # 清洗句子，防止句中有杂质
+            isCovid = False  # 记录段落和covid的相关性
+            for sentence in sentences:
+                predict = entity.predict(sentence)  # 获取实体并输出
+                print('predict:{}'.format(predict))
+                if 'COVID' in predict:  # 此句关联到新冠相关，本段落中往后的语句都与新冠相关
+                    isCovid = True
+                # 获取高亮相关实体
+                self.covid, self.gene, self.phen, self.protein = util.classify_kind_to_list(predict)
+                entities += util.handle_list_to_highlight(self.covid, self.gene, self.phen, self.protein)
+                entities = util.clean_entities_from_predict(entities)  # 清洗实体数据
+                # 获取二元组
+                sentence_double = util.getDouble_by_sentence_and_isCovid(predict, isCovid)
+                for sd in sentence_double:  # 去重
+                    if sd not in self.doubles:
+                        self.doubles.append(sd)
+            print('highlight:{}'.format(entities))
+            self.highLighter.setHighLightData(entities)
+            self.highLighter.highlightBlock(self.textEdit.toPlainText())
+            self.textEdit.setText(self.textEdit.toPlainText())
+            self.label.setText('分析完成！')
+
+        # sentences = util.clean_sentences(sentences)
+        # entities = []
+        # for sentence in sentences:
+        #     predict = entity.predict(sentence)  # 获取实体
+        #     print('predict:{}'.format(predict))
+        #     # 获取高亮相关实体
+        #     self.covid, self.gene, self.phen, self.protein = util.classify_kind_to_list(predict)
+        #     entities += util.handle_list_to_highlight(self.covid, self.gene, self.phen, self.protein)
+        #     entities = util.clean_entities_from_predict(entities)
+        #     # 获取二元组
+        #     sentence_double = util.getDouble_by_sentence(predict)
+        #     for sd in sentence_double:  # 去重
+        #         if sd not in self.doubles:
+        #             self.doubles.append(sd)
+        # print('highlight:{}'.format(entities))
+        # self.highLighter.setHighLightData(entities)
+        # self.highLighter.highlightBlock(self.textEdit.toPlainText())
+        # self.textEdit.setText(self.textEdit.toPlainText())
+        # self.label.setText('分析完成！')
 
     # 保存信息
     def click3(self):

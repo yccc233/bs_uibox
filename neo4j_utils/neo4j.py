@@ -11,6 +11,7 @@ class Neo4j:
 
     def insertNeo4j(self, doubles):
         # 保存到neo4j，参数是一个二维的列表
+        print('doubles:{}'.format(doubles))
         try:
             covid = self.matcher.match('covid', name='COVID-19').first()
             if not covid:
