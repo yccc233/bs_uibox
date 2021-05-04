@@ -13,12 +13,12 @@ class MyHighlighter(QtGui.QSyntaxHighlighter):
         self.geneColor = Qt.green
         self.phenColor = Qt.red
         self.proteinColor = Qt.blue
+        self.highlight_data = []
 
     # 对text文本区进行高亮，实际就是对整个textEdit高亮标记关键字
     def highlightBlock(self, text):
         for highlight in self.highlight_data:
             pos_s = [i.start() for i in re.finditer(highlight[1], text)]
-
             for pos in pos_s:
                 self.setFormat(pos, len(highlight[1]), self.getColorByStr(highlight[0]))
 
@@ -33,6 +33,6 @@ class MyHighlighter(QtGui.QSyntaxHighlighter):
         elif str == 'PHEN':
             return self.phenColor
         elif str == 'PROTEIN':
-            return self.phenColor
+            return self.proteinColor
         else:
             return None
