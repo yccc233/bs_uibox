@@ -1,4 +1,4 @@
-import sys
+import sys, re
 import PySide2.QtWidgets as QtWidgets
 from ui_utils import webview, highlighter
 from neo4j_utils import neo4j
@@ -73,13 +73,15 @@ class MainWindow(QtWidgets.QMainWindow):
     def click2(self):
         self.doubles = []
         text = self.textEdit.toPlainText()
+        text = util.clean_text_character(text)
         paras = util.split_text_to_paragraph(text)
         entities = []
         for p in paras:  # 段落分割
             sentences = util.split_paragraph_to_sentences(p)
             sentences = util.clean_sentences(sentences)  # 清洗句子，防止句中有杂质
-            isCovid = False  # 记录段落和covid的相关性
-            for sentence in sentences:
+            isCovid = False  # 记录段落和covid的相关性，首先是false
+            for sentence in sentences:  # 句子分割
+                sentence = re.sub(u"\\(.*?\\)|\\{.*?}|\\[.*?]|（.*?）", "", sentence)
                 predict = entity.predict(sentence)  # 获取实体并输出
                 print('predict:{}'.format(predict))
                 if 'COVID' in predict:  # 此句关联到新冠相关，本段落中往后的语句都与新冠相关

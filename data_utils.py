@@ -14,7 +14,7 @@ def split_text_to_paragraph(text):
 
 
 def split_paragraph_to_sentences(paragraph):
-    sentences = [p.strip()+'。' for p in paragraph.split('。') if p]
+    sentences = [p.strip() + '。' for p in paragraph.split('。') if p]
     return sentences
 
 
@@ -28,7 +28,7 @@ def classify_kind_to_list(predict):
     if 'PHEN' in predict:
         phen = predict['PHEN']
     if 'DISEASE' in predict:
-        phen = phen + predict['DISEASE']   # 目前将疾病和表型合并
+        phen = phen + predict['DISEASE']  # 目前将疾病和表型合并
     if 'PROTEIN' in predict:
         protein = predict['PROTEIN']
     return covid, gene, phen, protein
@@ -68,7 +68,7 @@ def getDouble_by_sentence(predict):
     if 'COVID' in predict:  # 有新冠关键字
         if GENE:
             for gene in GENE:
-                dou.append(['covid','COVID-19','gene',gene])
+                dou.append(['covid', 'COVID-19', 'gene', gene])
         if PHEN:
             for phen in PHEN:
                 dou.append(['covid', 'COVID-19', 'phen', phen])
@@ -112,6 +112,41 @@ def getDouble_by_sentence_and_isCovid(predict, isCovid):
     return dou
 
 
+# 清洗text数据，符号乱入
+def clean_text_character(text):
+    li = list(text)
+
+    for i in range(len(li)):
+        if li[i] == '.':
+            if 0 < i < len(li) and li[i - 1].isdigit() and li[i + 1].isdigit():  # 小数形式
+                pass
+            else:
+                li[i] = '。'
+            if li[0] == '.':
+                li = li[1:]
+            if li[-1] == '.':
+                li = li[:-1]
+        if li[i] == ';' or li[i] == '；':
+            li[i] = '。'
+        if li[i] == ' ':
+            if (li[i - 1].islower() or li[i - 1].isupper()) and (li[i + 1].islower() or li[i + 1].isupper()):
+                pass
+            else:
+                li[i] = ''
+        if li[i] == '/' and li[i - 1] == '和':
+            li[i] = ''
+        if li[i] == '-' and li[i-1].islower() and (li[i+1].islower() or li[i+1].isupper()):
+            li[i] = ' '
+        if li[i] == ',':
+            li[i] = '，'
+        if li[i] in ['\'', '\"', '“', '”']:
+            li[i] = ''
+        if li[i] in ['!', '！', '？', '?']:
+            li[i] = '。'
+
+    return ''.join(li)
+
+
 # 清洗文本数据
 def clean_sentences(sentences):
     for sen in sentences:  # 删除空元素
@@ -127,19 +162,12 @@ def clean_entities_from_predict(entitis):
     tar_entitis = []
     for entity in entitis:
         if entity not in tar_entitis and not re.search(r"[()（）%@&*$¥#!]", entity[1]):
-            entity[1] = entity[1].replace('_','-')
+            entity[1] = entity[1].replace('_', '-')
             tar_entitis.append(entity)
     return tar_entitis
 
 
 if __name__ == '__main__':
-    # entities = [['COVID', '新型冠状病毒2019_nCOV'], ['PROTEIN', '受体基因血管紧张素转化酶2'], ['PROTEIN', 'Angi'], ['GENE', 'ACE2'], ['GENE', 'ACE2'], ['GENE', '能(Gene '], ['GENE', '%的AC'], ['PROTEIN', 'Caveolin蛋白'], ['PHEN', '阻断病毒感染'], ['COVID', '新冠'], ['GENE', '过与AC'], ['PHEN', '引起细胞'], ['PHEN', '性和肾功能'], ['COVID', '当对新冠'], ['PHEN', '发现肾功能']]
-    # print(entities)
-    # entities = clean_entities_from_predict(entities)
-    # print(entities)
-    #
-    # print(re.search(r"[()（）\%@&*$¥#!]", '%的AC'))
-
     str = '新型冠状病毒感染的肺炎潜伏期一般为3~7d,多数不超过14d,但目前发现最长可达24天或许更长。以发热、乏力、干咳为主要表现，少数患者伴有鼻塞、流涕、腹泻等症状。重型病例多在一周后出现呼吸困难，严重者快速进展为急性呼吸窘迫综合征、脓毒症休克、难以纠正的代谢性酸中毒和出凝血功能障碍。'
 
     print(split_paragraph_to_sentences(str))
