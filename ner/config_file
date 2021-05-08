@@ -1,5 +1,5 @@
 {
-    "num_tags": 16,
+    "num_tags": 13,
     "lstm_dim": 100,
     "batch_size": 32,
     "train_epoch": 50,

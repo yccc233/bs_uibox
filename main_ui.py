@@ -63,6 +63,8 @@ class MainWindow(QtWidgets.QMainWindow):
         # str = '新冠中ACE2和受体基因血管紧张素转化酶2有关，且会导致发热现象。'
         fileDialog = QtWidgets.QFileDialog()
         path = fileDialog.getOpenFileName(dir='/Users/yucheng', filter='(*.txt)')
+        if not path[0]:
+            return
         with open(path[0], 'r') as f:
             str = f.read()
         str.replace('-', '_')
@@ -71,6 +73,7 @@ class MainWindow(QtWidgets.QMainWindow):
 
     # 开始分析
     def click2(self):
+        self.label.setText('开始分析...请稍等...')
         self.doubles = []
         text = self.textEdit.toPlainText()
         text = util.clean_text_character(text)

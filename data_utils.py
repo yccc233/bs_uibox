@@ -129,7 +129,7 @@ def clean_text_character(text):
         if li[i] == ';' or li[i] == '；':
             li[i] = '。'
         if li[i] == ' ':
-            if (li[i - 1].islower() or li[i - 1].isupper()) and (li[i + 1].islower() or li[i + 1].isupper()):
+            if (li[i - 1].islower() or li[i - 1].isupper() or li[i - 1].isdigit()) and (li[i + 1].islower() or li[i + 1].isupper() or li[i + 1].isdigit()):
                 pass
             else:
                 li[i] = ''
@@ -139,6 +139,8 @@ def clean_text_character(text):
             li[i] = ' '
         if li[i] == ',':
             li[i] = '，'
+        if li[i] == '|':
+            li[i] = ''
         if li[i] in ['\'', '\"', '“', '”']:
             li[i] = ''
         if li[i] in ['!', '！', '？', '?']:
