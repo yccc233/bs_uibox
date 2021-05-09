@@ -20,8 +20,8 @@ flags = tf.app.flags
 flags.DEFINE_boolean("clean",       False,      "clean train folder")
 flags.DEFINE_boolean("train",       False,      "Wither train the model")
 # 配置模型
-flags.DEFINE_integer("train_epoch", 50,        "train epoches")
-flags.DEFINE_integer("batch_size",  32,        "batch size")
+flags.DEFINE_integer("train_epoch", 50,         "train epoches")
+flags.DEFINE_integer("batch_size",  32,         "batch size")
 flags.DEFINE_integer("seg_dim",     20,         "Embedding size for segmentation, 0 if not used")
 flags.DEFINE_integer("char_dim",    100,        "Embedding size for characters")
 flags.DEFINE_integer("lstm_dim",    100,        "Num of hidden units in LSTM")
@@ -35,26 +35,22 @@ flags.DEFINE_string("optimizer",    "adam",     "Optimizer for training")
 flags.DEFINE_boolean("zeros",       False,      "Wither replace digits with zero")
 flags.DEFINE_boolean("lower",       True,       "Wither lower case")
 
-flags.DEFINE_integer("max_seq_len", 64,        "max sequence length for bert")
-flags.DEFINE_integer("max_epoch",   100,        "maximum training epochs")
-flags.DEFINE_integer("steps_check", 100,        "steps per checkpoint")
-flags.DEFINE_string("ckpt_path",    "%s/ckpt" % project_dir,      "Path to save model")
-flags.DEFINE_string("summary_path", "%s/summary" % project_dir,      "Path to store summaries")
-flags.DEFINE_string("log_file",     "%s/log/train.log" % project_dir,    "File for log")
-flags.DEFINE_string("map_file",     "%s/maps.pkl" % project_dir,     "file for maps")
-flags.DEFINE_string("vocab_file",   "%s/vocab.json" % project_dir,   "File for vocab")
-flags.DEFINE_string("config_file",  "%s/config_file" % project_dir,  "File for config")
-flags.DEFINE_string("script",       "%s/conlleval" % project_dir,    "evaluation script")
-flags.DEFINE_string("result_path",  "%s/result" % project_dir,       "Path for results")
-flags.DEFINE_string("train_file",   os.path.join("%s/data" % project_dir, "time.train"),  "Path for train data")
-flags.DEFINE_string("dev_file",     os.path.join("%s/data" % project_dir, "time.dev"),    "Path for dev data")
-flags.DEFINE_string("test_file",    os.path.join("%s/data" % project_dir, "time.test"),   "Path for test data")
+flags.DEFINE_integer("max_seq_len", 64,                                                     "max sequence length for bert")
+flags.DEFINE_integer("max_epoch",   100,                                                    "maximum training epochs")
+flags.DEFINE_integer("steps_check", 100,                                                    "steps per checkpoint")
+flags.DEFINE_string("ckpt_path",    "%s/ckpt" % project_dir,                                "Path to save model")
+flags.DEFINE_string("summary_path", "%s/summary" % project_dir,                             "Path to store summaries")
+flags.DEFINE_string("log_file",     "%s/log/train.log" % project_dir,                       "File for log")
+flags.DEFINE_string("map_file",     "%s/maps.pkl" % project_dir,                            "file for maps")
+flags.DEFINE_string("vocab_file",   "%s/vocab.json" % project_dir,                          "File for vocab")
+flags.DEFINE_string("config_file",  "%s/config_file" % project_dir,                         "File for config")
+flags.DEFINE_string("script",       "%s/conlleval" % project_dir,                           "evaluation script")
+flags.DEFINE_string("result_path",  "%s/result" % project_dir,                              "Path for results")
+flags.DEFINE_string("train_file",   os.path.join("%s/data" % project_dir, "time.train"),    "Path for train data")
+flags.DEFINE_string("dev_file",     os.path.join("%s/data" % project_dir, "time.dev"),      "Path for dev data")
+flags.DEFINE_string("test_file",    os.path.join("%s/data" % project_dir, "time.test"),     "Path for test data")
 
 FLAGS = tf.app.flags.FLAGS
-assert FLAGS.clip < 5.1, "gradient clip should't be too much"  # 梯度截断不应该跨步过大
-assert 0 <= FLAGS.dropout < 1, "dropout rate between 0 and 1"
-assert FLAGS.lr > 0, "learning rate must larger than zero"  # 学习速率learning rate（lr）必须要大于0
-assert FLAGS.optimizer in ["adam", "sgd", "adagrad"]  # 定义优化器种类，必须包含在三个之中
 
 
 # 配置模型
@@ -108,7 +104,7 @@ def train():
     # 创建id和标签的映射文件
     if not os.path.isfile(FLAGS.map_file):
         # Create a dictionary and a mapping for tags
-        # t保存的是tag出现的次数，O：26391，B-COVID：21... id-tag指的是id对tag的映射，按照t所对应的频率排序映射；tag-id同此
+        # _t保存的是tag出现的次数，O：26391，B-COVID：21... id-tag指的是id对tag的映射，按照t所对应的频率排序映射；tag-id同此
         _t, tag_to_id, id_to_tag = tag_mapping(train_sentences)
         with open(FLAGS.map_file, "wb") as f:
             pickle.dump([tag_to_id, id_to_tag], f)
@@ -117,15 +113,9 @@ def train():
             tag_to_id, id_to_tag = pickle.load(f)
 
     # 对数据进行处理，得到可用于模型训练的数据集，按照每句话构建三维数组，具体包括[[[句1][]][]]
-    train_data = prepare_dataset(
-        train_sentences, FLAGS.max_seq_len, tag_to_id, FLAGS.lower
-    )
-    dev_data = prepare_dataset(
-        dev_sentences, FLAGS.max_seq_len, tag_to_id, FLAGS.lower
-    )
-    test_data = prepare_dataset(
-        test_sentences, FLAGS.max_seq_len, tag_to_id, FLAGS.lower
-    )
+    train_data = prepare_dataset(train_sentences, FLAGS.max_seq_len, tag_to_id, FLAGS.lower)
+    dev_data = prepare_dataset(dev_sentences, FLAGS.max_seq_len, tag_to_id, FLAGS.lower)
+    test_data = prepare_dataset(test_sentences, FLAGS.max_seq_len, tag_to_id, FLAGS.lower)
 
     train_manager = BatchManager(train_data, FLAGS.batch_size)
     dev_manager = BatchManager(dev_data, FLAGS.batch_size)
@@ -163,9 +153,7 @@ def train():
                 loss.append(batch_loss)  # 收集损失loss
                 if step % FLAGS.steps_check == 0:  # 这里都是log
                     iteration = step // steps_per_epoch + 1
-                    logger.info("iteration:{},step:{}/{},loss:{:>0.4f}".format(
-                        iteration, step%steps_per_epoch, steps_per_epoch, np.mean(loss)
-                    ))
+                    logger.info("iteration:{},step:{}/{},loss:{:>0.4f}".format(iteration, step%steps_per_epoch, steps_per_epoch, np.mean(loss)))
                     loss = []
             # 评估模型正确率
             best = evaluate(sess, model, "dev", dev_manager, id_to_tag, logger)

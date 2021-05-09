@@ -1,6 +1,0 @@
-model_checkpoint_path: "/Users/yucheng/Applications/python/bs_ui/ner/ckpt/ner.ckpt-1334"
-all_model_checkpoint_paths: "/Users/yucheng/Applications/python/bs_ui/ner/ckpt/ner.ckpt-1073"
-all_model_checkpoint_paths: "/Users/yucheng/Applications/python/bs_ui/ner/ckpt/ner.ckpt-1160"
-all_model_checkpoint_paths: "/Users/yucheng/Applications/python/bs_ui/ner/ckpt/ner.ckpt-1189"
-all_model_checkpoint_paths: "/Users/yucheng/Applications/python/bs_ui/ner/ckpt/ner.ckpt-1247"
-all_model_checkpoint_paths: "/Users/yucheng/Applications/python/bs_ui/ner/ckpt/ner.ckpt-1334"

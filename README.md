@@ -12,3 +12,8 @@ pip3 install jieba -i https://pypi.tuna.tsinghua.edu.cn/simple
 # 图谱
 pip3 install py2neo
 ```
+
+### 关于模型训练见`./ner/reademe.md`
+
+---
+*最后更新于 2021.5.9*

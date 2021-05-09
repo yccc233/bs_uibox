@@ -22,6 +22,7 @@ class Model(object):
         self.global_step = tf.Variable(0, trainable=False)
         self.best_dev_f1 = tf.Variable(0.0, trainable=False)
         self.best_test_f1 = tf.Variable(0.0, trainable=False)
+        # 初始化器
         self.initializer = initializers.xavier_initializer()
 
         # add placeholders for the model
@@ -56,7 +57,6 @@ class Model(object):
         # bert模型参数初始化的地方
 
         project_dir = os.path.dirname(os.path.abspath(__file__))
-        # init_checkpoint = "%s/chinese_L-12_H-768_A-12/bert_model.ckpt"%project_dir
         init_checkpoint = "%s/albert_tiny/albert_model.ckpt" % project_dir
         # 获取模型中所有的训练参数。
         tvars = tf.trainable_variables()
@@ -67,26 +67,20 @@ class Model(object):
         # 打印加载模型的参数
         train_vars = []
         for var in tvars:
-            init_string = ""
-            if var.name in initialized_variable_names:
-                init_string = ", *INIT_FROM_CKPT*"
-            else:
+            if var.name not in initialized_variable_names:
                 train_vars.append(var)
+        # 优化器优化
         with tf.variable_scope("optimizer"):
             optimizer = self.config["optimizer"]
             if optimizer == "adam":
                 self.opt = tf.train.AdamOptimizer(self.lr)
             else:
                 raise KeyError
-
+            # 计算所有参数的导数 导数过大需要截断
             grads = tf.gradients(self.loss, train_vars)
-            (grads, _) = tf.clip_by_global_norm(grads, clip_norm=1.0)
-
-            self.train_op = self.opt.apply_gradients(
-                zip(grads, train_vars), global_step=self.global_step)
-            #capped_grads_vars = [[tf.clip_by_value(g, -self.config["clip"], self.config["clip"]), v]
-            #                     for g, v in grads_vars if g is not None]
-            #self.train_op = self.opt.apply_gradients(capped_grads_vars, self.global_step, )
+            grads, _ = tf.clip_by_global_norm(grads, clip_norm=1.0)
+            # 应用梯度，参数更新
+            self.train_op = self.opt.apply_gradients(zip(grads, train_vars), global_step=self.global_step)
 
         # saver of the model
         self.saver = tf.train.Saver(tf.global_variables(), max_to_keep=5)
@@ -95,7 +89,6 @@ class Model(object):
         # load bert embedding
         import os
         project_dir = os.path.dirname(os.path.abspath(__file__))
-        # bert_config = modeling.BertConfig.from_json_file("%s/chinese_L-12_H-768_A-12/bert_config.json"%project_dir)  # 配置文件地址
         bert_config = modeling.BertConfig.from_json_file(
             "%s/albert_tiny/albert_config_tiny.json" % project_dir)  # 配置文件地址
         model = modeling.BertModel(
@@ -120,17 +113,15 @@ class Model(object):
             lstm_cell = {}
             for direction in ["forward", "backward"]:
                 with tf.variable_scope(direction):
-                    lstm_cell[direction] = rnn.CoupledInputForgetGateLSTMCell(
-                        lstm_dim,
-                        use_peepholes=True,
-                        initializer=self.initializer,
-                        state_is_tuple=True)
-            outputs, final_states = tf.nn.bidirectional_dynamic_rnn(
-                lstm_cell["forward"],
-                lstm_cell["backward"],
-                lstm_inputs,
-                dtype=tf.float32,
-                sequence_length=lengths)
+                    lstm_cell[direction] = rnn.CoupledInputForgetGateLSTMCell(lstm_dim,
+                                                                              use_peepholes=True,
+                                                                              initializer=self.initializer,
+                                                                              state_is_tuple=True)
+            outputs, final_states = tf.nn.bidirectional_dynamic_rnn(lstm_cell["forward"],
+                                                                    lstm_cell["backward"],
+                                                                    lstm_inputs,
+                                                                    dtype=tf.float32,
+                                                                    sequence_length=lengths)
         return tf.concat(outputs, axis=2)
 
     def project_layer(self, lstm_outputs, name=None):
@@ -139,23 +130,19 @@ class Model(object):
         :param lstm_outputs: [batch_size, num_steps, emb_size]
         :return: [batch_size, num_steps, num_tags]
         """
-        with tf.variable_scope("project"  if not name else name):
+        with tf.variable_scope("project" if not name else name):
             with tf.variable_scope("hidden"):
-                W = tf.get_variable("W", shape=[self.lstm_dim*2, self.lstm_dim],
-                                    dtype=tf.float32, initializer=self.initializer)
+                W = tf.get_variable("W", shape=[self.lstm_dim * 2, self.lstm_dim], dtype=tf.float32, initializer=self.initializer)
 
-                b = tf.get_variable("b", shape=[self.lstm_dim], dtype=tf.float32,
-                                    initializer=tf.zeros_initializer())
-                output = tf.reshape(lstm_outputs, shape=[-1, self.lstm_dim*2])
+                b = tf.get_variable("b", shape=[self.lstm_dim], dtype=tf.float32, initializer=tf.zeros_initializer())
+                output = tf.reshape(lstm_outputs, shape=[-1, self.lstm_dim * 2])
                 hidden = tf.tanh(tf.nn.xw_plus_b(output, W, b))
 
             # project to score of tags
             with tf.variable_scope("logits"):
-                W = tf.get_variable("W", shape=[self.lstm_dim, self.num_tags],
-                                    dtype=tf.float32, initializer=self.initializer)
+                W = tf.get_variable("W", shape=[self.lstm_dim, self.num_tags], dtype=tf.float32, initializer=self.initializer)
 
-                b = tf.get_variable("b", shape=[self.num_tags], dtype=tf.float32,
-                                    initializer=tf.zeros_initializer())
+                b = tf.get_variable("b", shape=[self.num_tags], dtype=tf.float32, initializer=tf.zeros_initializer())
 
                 pred = tf.nn.xw_plus_b(hidden, W, b)
 
@@ -167,26 +154,22 @@ class Model(object):
         :param project_logits: [1, num_steps, num_tags]
         :return: scalar loss
         """
-        with tf.variable_scope("crf_loss"  if not name else name):
+        with tf.variable_scope("crf_loss" if not name else name):
             small = -1000.0
             # pad logits for crf loss
-            start_logits = tf.concat(
-                [small * tf.ones(shape=[self.batch_size, 1, self.num_tags]), tf.zeros(shape=[self.batch_size, 1, 1])], axis=-1)
+            start_logits = tf.concat([small * tf.ones(shape=[self.batch_size, 1, self.num_tags]), tf.zeros(shape=[self.batch_size, 1, 1])], axis=-1)
             pad_logits = tf.cast(small * tf.ones([self.batch_size, self.num_steps, 1]), tf.float32)
             logits = tf.concat([project_logits, pad_logits], axis=-1)
             logits = tf.concat([start_logits, logits], axis=1)
-            targets = tf.concat(
-                [tf.cast(self.num_tags*tf.ones([self.batch_size, 1]), tf.int32), self.targets], axis=-1)
+            targets = tf.concat([tf.cast(self.num_tags * tf.ones([self.batch_size, 1]), tf.int32), self.targets], axis=-1)
 
-            self.trans = tf.get_variable(
-                "transitions",
-                shape=[self.num_tags + 1, self.num_tags + 1],
-                initializer=self.initializer)
-            log_likelihood, self.trans = crf_log_likelihood(
-                inputs=logits,
-                tag_indices=targets,
-                transition_params=self.trans,
-                sequence_lengths=lengths+1)
+            self.trans = tf.get_variable("transitions",
+                                        shape=[self.num_tags + 1, self.num_tags + 1],
+                                        initializer=self.initializer)
+            log_likelihood, self.trans = crf_log_likelihood(inputs=logits,
+                                                            tag_indices=targets,
+                                                            transition_params=self.trans,
+                                                            sequence_lengths=lengths + 1)
             return tf.reduce_mean(-log_likelihood)
 
     def create_feed_dict(self, is_train, batch):
@@ -216,9 +199,7 @@ class Model(object):
         """
         feed_dict = self.create_feed_dict(is_train, batch)
         if is_train:
-            global_step, loss, _ = sess.run(
-                [self.global_step, self.loss, self.train_op],
-                feed_dict)
+            global_step, loss, _ = sess.run([self.global_step, self.loss, self.train_op], feed_dict)
             return global_step, loss
         else:
             lengths, logits = sess.run([self.lengths, self.logits], feed_dict)
@@ -234,7 +215,7 @@ class Model(object):
         # inference final labels usa viterbi Algorithm
         paths = []
         small = -1000.0
-        start = np.asarray([[small]*self.num_tags +[0]])
+        start = np.asarray([[small] * self.num_tags + [0]])
         for score, length in zip(logits, lengths):
             score = score[:length]
             pad = small * np.ones([length, 1])
