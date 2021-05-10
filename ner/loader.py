@@ -146,6 +146,7 @@ def input_from_line(line, max_seq_length, tag_to_id):
     labels = ' '.join(tags)  # 使用空格把标签拼起来
     labels = tokenization.convert_to_unicode(labels)
 
+    # 标记+序列截断（<max_length）
     ids, mask, segment_ids, label_ids = convert_single_example(char_line=text,
                                                                tag_to_id=tag_to_id,
                                                                max_seq_length=max_seq_length,

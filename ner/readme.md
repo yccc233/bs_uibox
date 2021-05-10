@@ -77,8 +77,11 @@ train_date 得到
 string：			句单字的列表
 
 segment_ids：	暂定0，utils.py：235附近可见`segment_ids.append(0)`
+
 ids				每个字的索引（./ner/albert-tiny/vocab.txt中的索引）
+
 mask：			每个字的长度*[1]再补全数据
+
 label_ids：		每个字对应的标签id
 
 data[0]数据如下：
@@ -92,7 +95,7 @@ data[0]数据如下：
 
 ### 准备训练——创建模型
 
-pass
+
 
 
 ### 训练
