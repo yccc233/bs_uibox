@@ -1,4 +1,4 @@
-import sys, re
+import sys, re, time
 import PySide2.QtWidgets as QtWidgets
 from ui_utils import webview, highlighter
 from neo4j_utils import neo4j
@@ -57,6 +57,8 @@ class MainWindow(QtWidgets.QMainWindow):
         self.phen = []
         self.protein = []
         self.doubles = []
+        # 二元组关系标签，用时间形式表示当前文本的关系组，如(COVID)-[20210511113641]->(ACE)
+        self.saveTime = ''
 
     # 打开文件
     def click1(self):
@@ -73,6 +75,9 @@ class MainWindow(QtWidgets.QMainWindow):
 
     # 开始分析
     def click2(self):
+        if not self.textEdit.toPlainText():
+            self.label.setText('请导入文本！')
+            return
         self.label.setText('开始分析...请稍等...')
         self.doubles = []
         text = self.textEdit.toPlainText()
@@ -86,6 +91,7 @@ class MainWindow(QtWidgets.QMainWindow):
             for sentence in sentences:  # 句子分割
                 sentence = re.sub(u"\\(.*?\\)|\\{.*?}|\\[.*?]|（.*?）", "", sentence)
                 predict = entity.predict(sentence)  # 获取实体并输出
+                print(sentence)
                 print('predict:{}'.format(predict))
                 if 'COVID' in predict:  # 此句关联到新冠相关，本段落中往后的语句都与新冠相关
                     isCovid = True
@@ -102,35 +108,17 @@ class MainWindow(QtWidgets.QMainWindow):
             self.highLighter.setHighLightData(entities)
             self.highLighter.highlightBlock(self.textEdit.toPlainText())
             self.textEdit.setText(self.textEdit.toPlainText())
+            self.saveTime = time.strftime('%Y%m%d%H%M%S')  # 生成标记ID
             self.label.setText('分析完成！')
-
-        # sentences = util.clean_sentences(sentences)
-        # entities = []
-        # for sentence in sentences:
-        #     predict = entity.predict(sentence)  # 获取实体
-        #     print('predict:{}'.format(predict))
-        #     # 获取高亮相关实体
-        #     self.covid, self.gene, self.phen, self.protein = util.classify_kind_to_list(predict)
-        #     entities += util.handle_list_to_highlight(self.covid, self.gene, self.phen, self.protein)
-        #     entities = util.clean_entities_from_predict(entities)
-        #     # 获取二元组
-        #     sentence_double = util.getDouble_by_sentence(predict)
-        #     for sd in sentence_double:  # 去重
-        #         if sd not in self.doubles:
-        #             self.doubles.append(sd)
-        # print('highlight:{}'.format(entities))
-        # self.highLighter.setHighLightData(entities)
-        # self.highLighter.highlightBlock(self.textEdit.toPlainText())
-        # self.textEdit.setText(self.textEdit.toPlainText())
-        # self.label.setText('分析完成！')
 
     # 保存信息
     def click3(self):
         neo = neo4j.Neo4j()
-        if neo.insertNeo4j(self.doubles):
+        ok, errmsg = neo.insertNeo4j(self.doubles)
+        if ok:
             self.label.setText('保存成功！')
         else:
-            self.label.setText('请打开neo4j服务...')
+            self.label.setText(errmsg)
 
     # 图谱h5
     def click4(self):
@@ -145,7 +133,6 @@ if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
     mainWin = MainWindow()
     mainWin.show()
-    # 预先初始化实体抽取模型
+    # 预先初始化实体抽取模型，创建实例对象，提高分析效率
     entity.predict('世界卫生组织命名为"2019冠状病毒病"，是指2019新型冠状病毒感染导致的肺炎。')
-    mainWin.label.setText('初始化完成，欢迎使用！')
     sys.exit(app.exec_())

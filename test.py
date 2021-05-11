@@ -1,9 +1,14 @@
 import re
 import data_utils
 import pickle
+import time
+from py2neo import *
 
 if __name__ == '__main__':
-    with open('./ner/maps.pkl', 'rb') as f:
-        lines = pickle.load(f)
-    for line in lines:
-        print(line)
+    graph = Graph("http://localhost:7474", auth=("neo4j", "1111"))
+    matcher = NodeMatcher(graph)
+
+    if graph.match_one(None,20210511123627):
+        print('yes')
+    else:
+        print('no')

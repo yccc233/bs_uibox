@@ -35,8 +35,42 @@ class Neo4j:
                     s = nodeA | nodeB | rel
                     self.graph.create(s)
         except:
-            return False
-        return True
+            return False, '请打开Neo4j服务！'
+        return True, None
+
+    def insertNeo4jRel(self, doubles, rel):
+        # 保存到neo4j，参数是一个二维的列表
+        print('doubles:{}'.format(doubles))
+        if not rel:
+            return False, '请先分析文本！'
+        try:
+            covid = self.matcher.match('covid', name='COVID-19').first()
+            if not covid:
+                covid = Node('covid', name='COVID-19')
+                self.graph.create(covid)
+            for dou in doubles:
+                # B结点建立
+                nodeB = self.matcher.match(dou[2], name=dou[3]).first()
+                if not nodeB:
+                    nodeB = Node(dou[2], name=dou[3])
+                # A结点建立
+                if dou[0] == 'covid':
+                    relation = Relationship(covid, rel, nodeB)
+                    s = covid | nodeB | relation
+                    self.graph.create(s)
+                else:
+                    nodeA = self.matcher.match(dou[0], name=dou[1]).first()
+                    if not nodeA:
+                        nodeA = Node(dou[0], name=dou[1])
+                    relation = Relationship(nodeA, rel, nodeB)
+                    s = nodeA | nodeB | relation
+                    self.graph.create(s)
+        except:
+            return False, '请打开Neo4j服务！'
+        return True, None
+
+    def deleteRel(self,rel):
+        pass
 
 
 if __name__ == '__main__':

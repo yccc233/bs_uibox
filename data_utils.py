@@ -14,6 +14,8 @@ def split_text_to_paragraph(text):
 
 
 def split_paragraph_to_sentences(paragraph):
+    if paragraph.find('。') < 0:
+        return []
     sentences = [p.strip() + '。' for p in paragraph.split('。') if p]
     return sentences
 

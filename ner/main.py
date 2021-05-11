@@ -56,6 +56,6 @@ def predict(text):
 
 
 if __name__ == '__main__':
-    string = '新型冠状病毒肺炎（Corona Virus Disease 2019，COVID-19），简称"新冠肺炎"，自从2020年武汉开始大肆在我国内蔓延，感染初期虽然会导致咳嗽、发烧等症状，但是严重可导致死亡。'
+    string = '医学院提示新冠病毒感染可能造成肾脏和睾丸损伤。'
     result = predict(string)
     print(result)
