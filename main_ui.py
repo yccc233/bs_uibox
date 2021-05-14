@@ -1,15 +1,19 @@
 import sys, re, time
-import PySide2.QtWidgets as QtWidgets
-from ui_utils import webview, highlighter
+from PySide2 import QtGui,QtCore,QtWidgets
+from ui_utils import webview, highlighter, loadui
 from neo4j_utils import neo4j
-import ner.getEntities as entity
 import data_utils as util
+import threading
+
+
+import ner.getEntities as entity
 
 
 class MainWindow(QtWidgets.QMainWindow):
     def __init__(self):
         super(MainWindow, self).__init__()
         self.setWindowTitle("信息挖掘")
+        # self.setAttribute(QtCore.Qt.WA_TranslucentBackground)
         self.setFixedSize(600, 400)
         # 建立一个窗口，居中MainWindow
         self.mainWidget = QtWidgets.QWidget()
@@ -17,8 +21,9 @@ class MainWindow(QtWidgets.QMainWindow):
         # 主要布局器，纵向布局
         self.mainLayout = QtWidgets.QVBoxLayout()
         self.mainWidget.setLayout(self.mainLayout)
+
         # 标签：存放提示、进度等
-        self.label = QtWidgets.QLabel('程序构建中...')
+        self.label = QtWidgets.QLabel('程序构建完成...')
         # 按钮1：打开文件
         self.button1 = QtWidgets.QPushButton(text='打开文件')
         self.button1.clicked.connect(self.click1)
@@ -34,9 +39,10 @@ class MainWindow(QtWidgets.QMainWindow):
         self.button4.clicked.connect(self.click4)
         self.mainLayout.addWidget(self.button4)
         # 文本框：显示文本信息
-        self.textEdit = QtWidgets.QTextEdit()
-        self.textEdit.setWindowOpacity(0.1)
-        self.textEdit.setPlaceholderText('//请导入文本')
+        self.textEdit = QtWidgets.QTextEdit(self.mainWidget)
+        # self.textEdit.setPlaceholderText('//请导入文本')
+        self.textEdit.viewport().setWindowFlags(QtCore.Qt.FramelessWindowHint | self.textEdit.windowFlags())
+        self.textEdit.viewport().setAttribute(QtCore.Qt.WA_TranslucentBackground)
 
         # 布局
         # 横向布局，保存分析、三元组、图谱按钮
@@ -134,5 +140,5 @@ if __name__ == '__main__':
     mainWin = MainWindow()
     mainWin.show()
     # 预先初始化实体抽取模型，创建实例对象，提高分析效率
-    entity.predict('世界卫生组织命名为"2019冠状病毒病"，是指2019新型冠状病毒感染导致的肺炎。')
+    # entity.predict('世界卫生组织命名为"2019冠状病毒病"，是指2019新型冠状病毒感染导致的肺炎。')
     sys.exit(app.exec_())
