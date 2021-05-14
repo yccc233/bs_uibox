@@ -6,8 +6,6 @@ import data_utils as util
 import threading
 
 
-import ner.getEntities as entity
-
 
 class MainWindow(QtWidgets.QMainWindow):
     def __init__(self):
@@ -21,6 +19,9 @@ class MainWindow(QtWidgets.QMainWindow):
         # 主要布局器，纵向布局
         self.mainLayout = QtWidgets.QVBoxLayout()
         self.mainWidget.setLayout(self.mainLayout)
+        self.color = QtGui.QColor('#FFEBCD')  # 背景颜色
+        self.setPalette(self.color)
+
 
         # 标签：存放提示、进度等
         self.label = QtWidgets.QLabel('程序构建完成...')
@@ -40,9 +41,12 @@ class MainWindow(QtWidgets.QMainWindow):
         self.mainLayout.addWidget(self.button4)
         # 文本框：显示文本信息
         self.textEdit = QtWidgets.QTextEdit(self.mainWidget)
-        # self.textEdit.setPlaceholderText('//请导入文本')
-        self.textEdit.viewport().setWindowFlags(QtCore.Qt.FramelessWindowHint | self.textEdit.windowFlags())
-        self.textEdit.viewport().setAttribute(QtCore.Qt.WA_TranslucentBackground)
+        self.textEdit.setPlaceholderText('//请导入文本')
+        pl = QtGui.QPalette()
+        brush = QtGui.QBrush()
+        brush.setColor(self.color)
+        pl.setBrush(QtGui.QPalette.Base, brush)
+        self.textEdit.setPalette(pl)
 
         # 布局
         # 横向布局，保存分析、三元组、图谱按钮
@@ -136,8 +140,21 @@ class MainWindow(QtWidgets.QMainWindow):
 
 
 if __name__ == '__main__':
+    # 加载动画
     app = QtWidgets.QApplication(sys.argv)
+    pixmap = QtGui.QPixmap('./src/gif/load.gif')
+    splash = QtWidgets.QSplashScreen(pixmap)
+    splashlabel = QtWidgets.QLabel(splash)
+    splashgif = QtGui.QMovie('./src/gif/load.gif')
+    splashlabel.setMovie(splashgif)
+    splashgif.start()
+    splash.show()
+
+import ner.getEntities as entity
+
+if __name__ == '__main__':
     mainWin = MainWindow()
+    splash.finish(mainWin)
     mainWin.show()
     # 预先初始化实体抽取模型，创建实例对象，提高分析效率
     # entity.predict('世界卫生组织命名为"2019冠状病毒病"，是指2019新型冠状病毒感染导致的肺炎。')
