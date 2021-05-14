@@ -6,7 +6,6 @@ import data_utils as util
 import threading
 
 
-
 class MainWindow(QtWidgets.QMainWindow):
     def __init__(self):
         super(MainWindow, self).__init__()
@@ -42,6 +41,7 @@ class MainWindow(QtWidgets.QMainWindow):
         # 文本框：显示文本信息
         self.textEdit = QtWidgets.QTextEdit(self.mainWidget)
         self.textEdit.setPlaceholderText('//请导入文本')
+        # 设置背景色
         pl = QtGui.QPalette()
         brush = QtGui.QBrush()
         brush.setColor(self.color)
@@ -138,6 +138,9 @@ class MainWindow(QtWidgets.QMainWindow):
         wv.setFixedSize(webWin.size())
         webWin.show()
 
+    # def dropfile(self):
+
+
 
 if __name__ == '__main__':
     # 加载动画
@@ -150,7 +153,7 @@ if __name__ == '__main__':
     splashgif.start()
     splash.show()
 
-import ner.getEntities as entity
+# import ner.getEntities as entity
 
 if __name__ == '__main__':
     mainWin = MainWindow()
