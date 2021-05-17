@@ -114,12 +114,12 @@ class MainWindow(QtWidgets.QMainWindow):
                 for sd in sentence_double:  # 去重
                     if sd not in self.doubles:
                         self.doubles.append(sd)
-            print('highlight:{}'.format(entities))
-            self.highLighter.setHighLightData(entities)
-            self.highLighter.highlightBlock(self.textEdit.toPlainText())
-            self.textEdit.setText(self.textEdit.toPlainText())
-            self.saveTime = time.strftime('%Y%m%d%H%M%S')  # 生成标记ID
-            self.label.setText('分析完成！')
+        print('highlight:{}'.format(entities))
+        self.highLighter.setHighLightData(entities)
+        self.highLighter.highlightBlock(self.textEdit.toPlainText())
+        self.textEdit.setText(self.textEdit.toPlainText())
+        self.saveTime = time.strftime('%Y%m%d%H%M%S')  # 生成标记ID
+        self.label.setText('分析完成！')
 
     # 保存信息
     def click3(self):
@@ -141,7 +141,6 @@ class MainWindow(QtWidgets.QMainWindow):
     # def dropfile(self):
 
 
-
 if __name__ == '__main__':
     # 加载动画
     app = QtWidgets.QApplication(sys.argv)
@@ -153,7 +152,7 @@ if __name__ == '__main__':
     splashgif.start()
     splash.show()
 
-# import ner.getEntities as entity
+import ner.getEntities as entity
 
 if __name__ == '__main__':
     mainWin = MainWindow()
