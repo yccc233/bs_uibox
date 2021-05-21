@@ -90,7 +90,7 @@ class Model(object):
         import os
         project_dir = os.path.dirname(os.path.abspath(__file__))
         bert_config = modeling.BertConfig.from_json_file(
-            "%s/albert_tiny/albert_config_tiny.json" % project_dir)  # 配置文件地址
+            "%s/albert_zh/albert_config/albert_config_tiny.json" % project_dir)  # 配置文件地址
         model = modeling.BertModel(
             config=bert_config,
             is_training=True,
@@ -157,15 +157,18 @@ class Model(object):
         with tf.variable_scope("crf_loss" if not name else name):
             small = -1000.0
             # pad logits for crf loss
-            start_logits = tf.concat([small * tf.ones(shape=[self.batch_size, 1, self.num_tags]), tf.zeros(shape=[self.batch_size, 1, 1])], axis=-1)
+            start_logits = tf.concat(
+                [small * tf.ones(shape=[self.batch_size, 1, self.num_tags]), tf.zeros(shape=[self.batch_size, 1, 1])],
+                axis=-1)
             pad_logits = tf.cast(small * tf.ones([self.batch_size, self.num_steps, 1]), tf.float32)
             logits = tf.concat([project_logits, pad_logits], axis=-1)
             logits = tf.concat([start_logits, logits], axis=1)
-            targets = tf.concat([tf.cast(self.num_tags * tf.ones([self.batch_size, 1]), tf.int32), self.targets], axis=-1)
+            targets = tf.concat([tf.cast(self.num_tags * tf.ones([self.batch_size, 1]), tf.int32), self.targets],
+                                axis=-1)
 
             self.trans = tf.get_variable("transitions",
-                                        shape=[self.num_tags + 1, self.num_tags + 1],
-                                        initializer=self.initializer)
+                                         shape=[self.num_tags + 1, self.num_tags + 1],
+                                         initializer=self.initializer)
             log_likelihood, self.trans = crf_log_likelihood(inputs=logits,
                                                             tag_indices=targets,
                                                             transition_params=self.trans,

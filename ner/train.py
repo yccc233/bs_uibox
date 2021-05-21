@@ -81,13 +81,7 @@ def evaluate(sess, model, name, data, id_to_tag, logger):
         logger.info(line)  # 逐行打印评估结果
     f1 = float(eval_lines[1].strip().split()[-1])
 
-    if name == "dev":
-        best_test_f1 = model.best_dev_f1.eval()
-        if f1 > best_test_f1:
-            tf.assign(model.best_dev_f1, f1).eval()
-            logger.info("new best dev f1 score:{:>.3f}".format(f1))
-        return f1 > best_test_f1
-    elif name == "test":
+    if name == "test":
         best_test_f1 = model.best_test_f1.eval()
         if f1 > best_test_f1:
             tf.assign(model.best_test_f1, f1).eval()
@@ -98,7 +92,6 @@ def evaluate(sess, model, name, data, id_to_tag, logger):
 def train():
     # 加载数据集
     train_sentences = load_sentences(FLAGS.train_file, FLAGS.lower, FLAGS.zeros)
-    dev_sentences = load_sentences(FLAGS.dev_file, FLAGS.lower, FLAGS.zeros)
     test_sentences = load_sentences(FLAGS.test_file, FLAGS.lower, FLAGS.zeros)
 
     # 创建id和标签的映射文件
@@ -114,11 +107,9 @@ def train():
 
     # 对数据进行处理，得到可用于模型训练的数据集，按照每句话构建三维数组，具体包括[[[句1][]][]]
     train_data = prepare_dataset(train_sentences, FLAGS.max_seq_len, tag_to_id, FLAGS.lower)
-    dev_data = prepare_dataset(dev_sentences, FLAGS.max_seq_len, tag_to_id, FLAGS.lower)
     test_data = prepare_dataset(test_sentences, FLAGS.max_seq_len, tag_to_id, FLAGS.lower)
 
     train_manager = BatchManager(train_data, FLAGS.batch_size)
-    dev_manager = BatchManager(dev_data, FLAGS.batch_size)
     test_manager = BatchManager(test_data, FLAGS.batch_size)
     # 创建模型和log的文件夹，若不存在才创建
     make_path(FLAGS)
@@ -156,10 +147,9 @@ def train():
                     logger.info("iteration:{},step:{}/{},loss:{:>0.4f}".format(iteration, step%steps_per_epoch, steps_per_epoch, np.mean(loss)))
                     loss = []
             # 评估模型正确率
-            best = evaluate(sess, model, "dev", dev_manager, id_to_tag, logger)
+            best = evaluate(sess, model, "test", test_manager, id_to_tag, logger)
             if best:  # 保存模型
                 save_model(sess, model, FLAGS.ckpt_path, logger, global_steps=step)
-            evaluate(sess, model, "test", test_manager, id_to_tag, logger)
 
 
 def main(_):
