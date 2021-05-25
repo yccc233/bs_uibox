@@ -43,10 +43,10 @@ class Model(object):
         embedding = self.bert_embedding()
 
         # apply dropout before feed to lstm layer
-        lstm_inputs = tf.nn.dropout(embedding, self.dropout)
+        # lstm_inputs = tf.nn.dropout(embedding, self.dropout)
 
         # bi-directional lstm layer
-        lstm_outputs = self.biLSTM_layer(lstm_inputs, self.lstm_dim, self.lengths)
+        lstm_outputs = self.biLSTM_layer(embedding, self.lstm_dim, self.lengths)
 
         # logits for tags
         self.logits = self.project_layer(lstm_outputs)

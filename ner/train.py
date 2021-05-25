@@ -92,12 +92,12 @@ def evaluate(sess, model, name, data, id_to_tag, logger):
 def train():
     # 加载数据集
     train_sentences = load_sentences(FLAGS.train_file, FLAGS.lower, FLAGS.zeros)
+    dev_sentences = load_sentences(FLAGS.dev_file, FLAGS.lower, FLAGS.zeros)
     test_sentences = load_sentences(FLAGS.test_file, FLAGS.lower, FLAGS.zeros)
 
     # 创建id和标签的映射文件
     if not os.path.isfile(FLAGS.map_file):
         # Create a dictionary and a mapping for tags
-        # _t保存的是tag出现的次数，O：26391，B-COVID：21... id-tag指的是id对tag的映射，按照t所对应的频率排序映射；tag-id同此
         _t, tag_to_id, id_to_tag = tag_mapping(train_sentences)
         with open(FLAGS.map_file, "wb") as f:
             pickle.dump([tag_to_id, id_to_tag], f)
@@ -105,11 +105,19 @@ def train():
         with open(FLAGS.map_file, "rb") as f:
             tag_to_id, id_to_tag = pickle.load(f)
 
-    # 对数据进行处理，得到可用于模型训练的数据集，按照每句话构建三维数组，具体包括[[[句1][]][]]
-    train_data = prepare_dataset(train_sentences, FLAGS.max_seq_len, tag_to_id, FLAGS.lower)
-    test_data = prepare_dataset(test_sentences, FLAGS.max_seq_len, tag_to_id, FLAGS.lower)
+    # 对数据进行处理，得到可用于模型训练的数据集
+    train_data = prepare_dataset(
+        train_sentences, FLAGS.max_seq_len, tag_to_id, FLAGS.lower
+    )
+    dev_data = prepare_dataset(
+        dev_sentences, FLAGS.max_seq_len, tag_to_id, FLAGS.lower
+    )
+    test_data = prepare_dataset(
+        test_sentences, FLAGS.max_seq_len, tag_to_id, FLAGS.lower
+    )
 
     train_manager = BatchManager(train_data, FLAGS.batch_size)
+    dev_manager = BatchManager(dev_data, FLAGS.batch_size)
     test_manager = BatchManager(test_data, FLAGS.batch_size)
     # 创建模型和log的文件夹，若不存在才创建
     make_path(FLAGS)
@@ -136,21 +144,26 @@ def train():
 
         logger.info("start training")
         loss = []
+        # 训练
         for i in range(FLAGS.train_epoch):
-            # 获取批数据，数据是被打乱的（shuffle）
+            # 获取batch
             for batch in train_manager.iter_batch(shuffle=True):
                 step, batch_loss = model.run_step(sess, True, batch)  # 训练
 
                 loss.append(batch_loss)  # 收集损失loss
                 if step % FLAGS.steps_check == 0:  # 这里都是log
                     iteration = step // steps_per_epoch + 1
-                    logger.info("iteration:{},step:{}/{},loss:{:>0.4f}".format(iteration, step%steps_per_epoch, steps_per_epoch, np.mean(loss)))
+                    logger.info("iteration:{},step:{}/{},loss:{:>0.4f}".format(
+                        iteration, step % steps_per_epoch, steps_per_epoch, np.mean(loss)
+                    ))
                     loss = []
-            # 评估模型正确率
-            best = evaluate(sess, model, "test", test_manager, id_to_tag, logger)
-            if best:  # 保存模型
+            # # 评估模型正确率
+            print(i)
+            best = evaluate(sess, model, "dev", dev_manager, id_to_tag, logger)
+            if best:  # 保存模型， 分数刷新最高分纪录时才会保存模型，最终保存模型数是5个（定义的）
                 save_model(sess, model, FLAGS.ckpt_path, logger, global_steps=step)
-
+            print(i)
+            evaluate(sess, model, "test", test_manager, id_to_tag, logger)
 
 def main(_):
     FLAGS.train = True
