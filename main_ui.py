@@ -152,9 +152,8 @@ if __name__ == '__main__':
     splashgif.start()
     splash.show()
 
-import ner.getEntities as entity
+    import ner.getEntities as entity
 
-if __name__ == '__main__':
     mainWin = MainWindow()
     splash.finish(mainWin)
     mainWin.show()
