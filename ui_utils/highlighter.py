@@ -9,7 +9,7 @@ class MyHighlighter(QtGui.QSyntaxHighlighter):
         QtGui.QSyntaxHighlighter.__init__(self, parent)
         self.parent = parent
         self.highlight_data = []
-        self.covidColor = Qt.gray
+        self.covidColor = QtGui.QColor('#FF00FF')
         self.geneColor = Qt.green
         self.phenColor = Qt.red
         self.proteinColor = Qt.blue

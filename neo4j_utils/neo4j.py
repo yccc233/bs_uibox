@@ -13,7 +13,7 @@ class Neo4j:
         # 保存到neo4j，参数是一个二维的列表
         print('doubles:{}'.format(doubles))
         try:
-            self.graph.delete_all()  # 删除先前的数据
+            self.graph.delete_all()  # 删除先前的数据，不需要就删掉
             covid = self.matcher.match('covid', name='COVID-19').first()
             if not covid:
                 covid = Node('covid', name='COVID-19')

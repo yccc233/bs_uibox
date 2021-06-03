@@ -115,6 +115,7 @@ class MainWindow(QtWidgets.QMainWindow):
                     if sd not in self.doubles:
                         self.doubles.append(sd)
         print('highlight:{}'.format(entities))
+        print('doules:{}'.format(self.doubles))
         self.highLighter.setHighLightData(entities)
         self.highLighter.highlightBlock(self.textEdit.toPlainText())
         self.textEdit.setText(self.textEdit.toPlainText())
