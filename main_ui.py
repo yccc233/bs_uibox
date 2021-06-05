@@ -124,6 +124,9 @@ class MainWindow(QtWidgets.QMainWindow):
 
     # 保存信息
     def click3(self):
+        if self.doubles == []:
+            self.label.setText('没有可保存的信息！')
+            return
         neo = neo4j.Neo4j()
         ok, errmsg = neo.insertNeo4j(self.doubles)
         if ok:
@@ -138,8 +141,6 @@ class MainWindow(QtWidgets.QMainWindow):
         wv = webview.WebView(webWin)
         wv.setFixedSize(webWin.size())
         webWin.show()
-
-    # def dropfile(self):
 
 
 if __name__ == '__main__':
@@ -158,6 +159,4 @@ if __name__ == '__main__':
     mainWin = MainWindow()
     splash.finish(mainWin)
     mainWin.show()
-    # 预先初始化实体抽取模型，创建实例对象，提高分析效率
-    # entity.predict('世界卫生组织命名为"2019冠状病毒病"，是指2019新型冠状病毒感染导致的肺炎。')
     sys.exit(app.exec_())
