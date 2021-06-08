@@ -8,7 +8,7 @@ from ner.model import Model
 from ner.loader import input_from_line
 from ner.train import FLAGS, load_config
 import re
-from zhon.hanzi import punctuation
+# from zhon.hanzi import punctuation
 
 
 # 导入模型
@@ -25,17 +25,13 @@ sess = tf.Session(config=tf_config)
 model = create_model(sess, Model, FLAGS.ckpt_path, config, logger)
 
 
+# 过滤杂项
 def reprocess(textList):
-
     resList = []
     for text in textList:
-        line = re.sub("[{}]+".format(punctuation), "", text)  # 包含中文标点符号的识别结果，一般都是识别错误的
-        if len(line)<len(text):
+        if len(text)<2:  # 文本长度较短的话，一般也是识别错误的
             continue
-        if not line or len(line)<2:  # 文本长度较短的话，一般也是识别错误的
-            continue
-        line = line.replace('-', ' ')
-        resList.append(line)
+        resList.append(text)
     return resList
 
 
@@ -58,9 +54,6 @@ def predict(text):
 
 
 if __name__ == '__main__':
-    # string = '该论文基于公开的数据库，利用单细胞RNA测序分析技术，对新型冠状病毒2019-nCOV的受体基因血管紧张素转化酶2在人体肺脏内每一个细胞的表达情况进行了分析，研究了共计四万三千多个细胞。'
-    # string = '笔者认为，确诊NCP不可单打独斗，要多学科相互配合，对于非常时期，也要极大的发挥影像学的优势，肺HRCT可直观、动态监测患者治疗效果和病变转归情况。'.strip()
-    string = '很多人患有非肥胖型糖尿病。'
-
+    string = '此次疫情爆发伊始，中科院巴斯德所郝沛等学者就率先通过计算模拟推测出新型冠状病毒可能和SARS有同样的受体ACE2，虽然其与ACE2的结合力可能弱于SARS。'
     result = predict(string)
     print(result)

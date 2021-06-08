@@ -5,7 +5,6 @@ import codecs
 import random
 
 import numpy as np
-import jieba
 
 
 def create_dico(item_list):
@@ -123,23 +122,23 @@ def insert_singletons(words, singletons, p=0.5):
     return new_words
 
 
-def get_seg_features(string):
-    """
-    Segment text with jieba
-    features are represented in bies format
-    s donates single word
-    """
-    seg_feature = []
-
-    for word in jieba.cut(string):
-        if len(word) == 1:
-            seg_feature.append(0)   #o
-        else:
-            tmp = [2] * len(word)   #i
-            tmp[0] = 1              #b
-            tmp[-1] = 3             #e
-            seg_feature.extend(tmp)
-    return seg_feature
+# def get_seg_features(string):
+#     """
+#     Segment text with jieba
+#     features are represented in bies format
+#     s donates single word
+#     """
+#     seg_feature = []
+#
+#     for word in jieba.cut(string):
+#         if len(word) == 1:
+#             seg_feature.append(0)   #o
+#         else:
+#             tmp = [2] * len(word)   #i
+#             tmp[0] = 1              #b
+#             tmp[-1] = 3             #e
+#             seg_feature.extend(tmp)
+#     return seg_feature
 
 
 def create_input(data):
