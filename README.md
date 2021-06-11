@@ -134,7 +134,7 @@
 
 ​		数据集来源于两部分
 
--   2018年的天池比赛数据集
+-   2018年的天池比赛数据集，点击[这里](https://gitee.com/smarteas/tianchi_ruijin_knowledge_graph)获取
 -   新冠研究文献的手动标注
 
 ​		其中来源分布于
