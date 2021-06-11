@@ -5,10 +5,11 @@
 
 ## 环境
 
-主要需要3个包，pip安装方法直接给出：
+pip安装方法给出：
 
 ```shell
 pip3 install --upgrade https://storage.googleapis.com/tensorflow/mac/cpu/tensorflow-1.14.0-py3-none-any.whl
+# 以下两个包暂时无用
 pip3 install zhon -i https://pypi.tuna.tsinghua.edu.cn/simple
 pip3 install jieba -i https://pypi.tuna.tsinghua.edu.cn/simple
 ```
@@ -99,7 +100,6 @@ data[0]数据如下：
 
 
 ### 训练
-
 
 
 

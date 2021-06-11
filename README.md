@@ -134,10 +134,10 @@
 
 ​		数据集来源于两部分
 
--   2018年的天池比赛数据集，点击[这里](https://gitee.com/smarteas/tianchi_ruijin_knowledge_graph)获取
--   新冠研究文献的手动标注
+-   2018年的天池比赛数据集，点击[这里](https://gitee.com/smarteas/tianchi_ruijin_knowledge_graph)获取。
+-   新冠研究文献的手动标注。
 
-​		其中来源分布于
+​		以上所有数据集在[这里](https://github.com/yccc233/bs_uibox/tree/master/ner/data)，其中来源分布:
 
 |        | 天池比赛数据集 | 文献手动标注 |
 | ------ | -------------- | ------------ |
