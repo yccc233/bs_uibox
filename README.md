@@ -106,7 +106,7 @@
 
 ​		功能实现由后端程序提供，后端程序负责命名实体的提取。neo4j的服务端与实体识别模型分隔开，在没有neo4j服务时也不影响识别模型的使用。关系如下图：
 
-<img src="./src/mdpic/概念图.png" width=40% align="left">
+<img src="./src/mdpic/概念图.png">
 
 
 
@@ -159,13 +159,13 @@
 
     打开`pyCharm`后，配置环境
 
-    <img src="./src/mdpic/setup1.png" width=30% align="left">
+    <img src="./src/mdpic/setup1.png">
 
     
 
      **注意python环境需要3.6**，其他版本不支持*tensorflow1.14.0*。
 
-    <img src="./src/mdpic/setEnv.png" width=80% align="left">
+    <img src="./src/mdpic/setEnv.png">
 
     
 
@@ -187,7 +187,7 @@
 
 2.  启动程序后在一段加载动画后，即可进入主界面
 
-    <img src="./src/mdpic/mainui.png" width=60% align="left">
+    <img src="./src/mdpic/mainui.png">
 
     主界面包含4个按钮
 
@@ -204,7 +204,7 @@
 
 在本地文件下有txt文件的文本可以通过文件的流处理读取内容到文本框或者可以自己编辑、粘贴等。
 
-<img src="./src/mdpic/importTxt.png" width=60% align="left">
+<img src="./src/mdpic/importTxt.png">
 
 
 
@@ -212,13 +212,13 @@
 
 ​		点击开始分析后系统自动调用后台分析文本内的数据，在控制台中的输出可以看到分析后的实体类型数据及可存储的三元组序列。
 
-<img src="./src/mdpic/output.png" lign="left">
+<img src="./src/mdpic/output.png">
 
 ​		分析需要一些时间，约**1000字/s**。
 
 ​		分析过后可以看到界面的文本框内颜色的变化：
 
-<img src="./src/mdpic/analyseUi.png" width=60% align="left">
+<img src="./src/mdpic/analyseUi.png">
 
 
 
@@ -255,7 +255,7 @@
 
 ​		在识别文本内容后，如果有三元组信息，会建立neo4j的连接，并保存到neo4j数据库中，保存成功后标签提示成功。
 
-<img src="./src/mdpic/saveDoubles.png" width=60% align="left">
+<img src="./src/mdpic/saveDoubles.png">
 
 
 
@@ -265,13 +265,13 @@
 
 ​		打开neo4j后，可以在两个界面之间来回切换，以及三元组数据内容的比对。
 
-<img src="./src/mdpic/neo4jUi.png" width=80% align="left">
+<img src="./src/mdpic/neo4jUi.png">
 
 
 
 ## 3.3neo4j使用
 
-<img src="./src/mdpic/neo1.png" width=60% align="left">
+<img src="./src/mdpic/neo1.png">
 
 ​		登陆后首先展现的是这个界面。它主要有两个部分构成
 
@@ -280,7 +280,7 @@
 
 
 
-<img src="./src/mdpic/neo2.png" width=60% align="left">
+<img src="./src/mdpic/neo2.png">
 
 ​		打开“database”后有一些结点、关系、属性的标签，点击后会自动执行match指令，并显示在右边的图形图谱中。
 
